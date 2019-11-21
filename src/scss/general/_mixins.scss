@@ -1,0 +1,45 @@
+@mixin more-400 {
+  @media (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin more-576 {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin more-768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin more-992 {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin more-1200 {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: $color-blue-text;
+  opacity: 1;
+}
+
+@mixin dashed-border {
+  background: linear-gradient(to right, #9da7a8 5px, transparent 5px) repeat-x left bottom;
+  background-size: 11px 1px;
+}
+
+@mixin shadow {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+}

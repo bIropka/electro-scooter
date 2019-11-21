@@ -1,0 +1,21 @@
+@import "general/fonts";
+
+@import "font-awesome/font-awesome";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
+@import "../../node_modules/nouislider/distribute/nouislider.min.css";
+
+@import "general/variables";
+@import "general/mixins";
+
+@import "general/general";
+@import "components/header";
+@import "components/footer";
+@import "components/breadcrumbs";
+@import "components/hero";
+@import "components/product";
+@import "components/articles";
+@import "components/reviews";
+@import "components/catalog";
+@import "components/cart";
+@import "components/order";
