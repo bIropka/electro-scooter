@@ -556,6 +556,32 @@ button:focus,
   outline: none;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: linear-gradient(to bottom, #41bb6d, #47c277 50%, #3cb464 50%);
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: $color-white;
+  transform: skew(-7deg);
+
+  &-icon {
+    width: 20px;
+    margin: 0 20px 0 0;
+    flex-shrink: 0;
+  }
+
+  &-icon,
+  &-text {
+    transform: skew(7deg);
+  }
+
+}
+
 .slick-arrow {
   width: 46px;
   height: 46px;
