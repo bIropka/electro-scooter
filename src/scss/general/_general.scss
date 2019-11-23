@@ -582,6 +582,77 @@ button:focus,
 
 }
 
+.contacts {
+  margin: 25px 0;
+  text-align: center;
+
+  &-phone {
+    font-size: 20px;
+    line-height: 22px;
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &-text {
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 10px 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin: 0 6px;
+    }
+
+    img {
+      width: 23px;
+      margin: 0 7px 0 0;
+      flex-shrink: 0;
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 600;
+      color: #51b0df;
+    }
+
+  }
+
+}
+
+.address-hours {
+  text-align: center;
+
+  &-icon {
+    display: none;
+  }
+
+  a {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    @include link-dashed(#51b0df, $color-white);
+  }
+
+  span {
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+}
+
 .slick-arrow {
   width: 46px;
   height: 46px;

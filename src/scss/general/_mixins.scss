@@ -30,8 +30,8 @@
 
 @mixin input-placeholder {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color: $color-blue-text;
+  font-size: 14px;
+  color: $color-black;
   opacity: 1;
 }
 
@@ -43,3 +43,37 @@
 @mixin shadow {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 }
+
+@mixin link-dashed($color, $h-color) {
+  text-decoration: none;
+  position: relative;
+  color: $color;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right, $color 3px, transparent 3px) repeat-x;
+    background-size: 5px 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  @include more-1200 {
+
+    &:hover {
+      color: $h-color;
+
+      &:after {
+        background: linear-gradient(to right, $h-color 3px, transparent 3px) repeat-x;
+        background-size: 5px 1px;
+      }
+
+    }
+
+  }
+
+}
+
