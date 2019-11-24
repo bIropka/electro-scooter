@@ -122,6 +122,10 @@
         top: calc(100% + 10px);
       }
 
+      &:hover {
+        color: $color-blue;
+      }
+
     }
 
     &-all {

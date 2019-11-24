@@ -138,6 +138,7 @@
     .slick-dots {
       justify-content: flex-start;
       left: 38px;
+      right: 50%;
       top: auto;
       bottom: 40px;
     }
@@ -156,9 +157,9 @@
           background: $color-brown;
           position: absolute;
           left: calc(100% - 10px);
-          top: -5px;
-          bottom: -5px;
-          transform: rotate(3deg);
+          top: 0;
+          bottom: 0;
+          transform: skew(-3deg);
         }
 
       }
@@ -225,6 +226,15 @@
     .slick-dots {
       left: 42px;
       bottom: 35px;
+
+      li {
+
+        button:hover {
+          background-color: $color-white;
+        }
+
+      }
+
     }
 
     &-slide-column {
@@ -234,11 +244,6 @@
         background: $color-brown url(../images/heor-slide-decor.png) no-repeat center bottom;
         background-size: 397px auto;
         border-radius: $br 0 0 $br;
-
-        &:after {
-          display: none;
-        }
-
       }
 
       &:nth-of-type(2) {
