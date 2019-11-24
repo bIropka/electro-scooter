@@ -12,6 +12,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 64px;
       padding: 0 20px 0 0;
     }
 
@@ -223,6 +224,7 @@
   @include more-1200 {
 
     &-bottom {
+      padding: 40px 0 30px;
 
       .wrapper-inner {
         flex-wrap: wrap;
@@ -244,11 +246,19 @@
       padding: 0 20px;
       background: linear-gradient(to bottom, $color-white 10%, #f8f8f8);
       border-radius: $br;
+      border: 1px solid transparent;
+      border-top-color: $color-white;
+      border-bottom-color: #f8f8f8;
       @include shadow;
 
       input {
         width: 100%;
         background: transparent;
+      }
+
+      &:hover {
+        box-shadow: none;
+        border: 1px solid #bac5c7;
       }
 
     }
@@ -298,6 +308,190 @@
 
         &:after {
           display: none;
+        }
+
+      }
+
+    }
+
+    &-burger {
+      display: none;
+    }
+
+    &-nav {
+      width: auto;
+      height: auto;
+      flex-grow: 1;
+      padding: 0 40px 0 0;
+      background: none;
+      position: static;
+      overflow: visible;
+    }
+
+    &-menu {
+      display: flex;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      background: none;
+
+      &-item {
+        margin: 0 15px 0 0;
+
+        &:last-of-type {
+          margin: 0;
+        }
+
+        &.has-children {
+          padding: 0 12px 0 0;
+          position: relative;
+
+          &:before,
+          &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
+            position: absolute;
+            right: 0;
+          }
+
+          &:before {
+            border-bottom: 4px solid $color-blue;
+            top: calc(50% - 4px);
+          }
+
+          &:after {
+            border-top: 4px solid $color-blue;
+            bottom: calc(50% - 7px);
+          }
+
+        }
+
+        &:hover {
+
+          &:before {
+            border-bottom: 4px solid $color-hover;
+          }
+
+          &:after {
+            border-top: 4px solid $color-hover;
+          }
+
+          .header-menu-link {
+            color: $color-hover;
+          }
+
+          .header-submenu {
+            display: block;
+            width: 200px;
+            background: $color-blue;
+            border-radius: $br;
+            padding: 15px 30px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+
+            &:after {
+              content: '';
+              display: block;
+              width: 0;
+              height: 0;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid $color-blue;
+              position: absolute;
+              bottom: 100%;
+              left: 15px;
+            }
+
+            &-item {
+              margin: 10px 0;
+              line-height: 20px;
+            }
+
+            &-link {
+              font-size: 15px;
+              line-height: 20px;
+              font-weight: 400;
+              text-decoration: underline;
+
+              &:hover {
+                text-decoration: none;
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+      &-link {
+        color: $color-black;
+      }
+
+    }
+
+    &-submenu {
+      display: none;
+    }
+
+    &-cart {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      &-text {
+        display: block;
+        margin: 0 0 0 10px;
+        font-size: 14px;
+        line-height: 22px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $color-black;
+      }
+
+      &:hover {
+
+        .header-cart-value {
+          background: $color-green;
+        }
+
+        .header-cart-text {
+          color: $color-hover;
+        }
+
+      }
+
+    }
+
+    .contacts {
+
+      &-social li:hover {
+
+        .contacts-social-icon {
+
+          &.icon-viber {
+            background: url(../images/icon-viber-hover-header.png) no-repeat center center;
+          }
+
+          &.icon-whatsapp {
+            background: url(../images/icon-whatsapp-hover-header.png) no-repeat center center;
+          }
+
+          &.icon-telegram {
+            background: url(../images/icon-telegram-hover-header.png) no-repeat center center;
+          }
+
+        }
+
+        a {
+          color: $color-black;
+          text-decoration: none;
         }
 
       }

@@ -342,12 +342,27 @@
           padding: 0;
         }
 
+        a:hover {
+          text-decoration: none;
+          color: #bac5c7;
+        }
+
       }
 
     }
 
     &-social {
       margin: 0;
+
+      ul {
+
+        a:hover {
+          color: $color-white;
+          background-color: #51b0df;
+        }
+
+      }
+
     }
 
     &-bottom {
@@ -368,6 +383,52 @@
 
       ul li:last-of-type {
         margin: 0 0 0 20px;
+      }
+
+      a:hover {
+        color: #bac5c7;
+
+        &.active:hover {
+          color: #2ba3de;
+        }
+
+      }
+
+    }
+
+    .contacts {
+
+      &-social li:hover {
+
+        .contacts-social-icon {
+
+          &.icon-viber {
+            background: url(../images/icon-viber-hover-footer.png) no-repeat center center;
+          }
+
+          &.icon-whatsapp {
+            background: url(../images/icon-whatsapp-hover-footer.png) no-repeat center center;
+          }
+
+          &.icon-telegram {
+            background: url(../images/icon-telegram-hover-footer.png) no-repeat center center;
+          }
+
+        }
+
+        a {
+          color: $color-white;
+          text-decoration: none;
+        }
+
+      }
+
+    }
+
+    &-subscribe {
+
+      button:hover {
+        background-color: #3cb464;
       }
 
     }

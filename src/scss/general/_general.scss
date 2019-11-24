@@ -570,6 +570,8 @@ button:focus,
   text-transform: uppercase;
   color: $color-white;
   transform: skew(-7deg);
+  cursor: pointer;
+  transition: .4s;
 
   &-icon {
     width: 20px;
@@ -580,6 +582,14 @@ button:focus,
   &-icon,
   &-text {
     transform: skew(7deg);
+  }
+
+  @include more-1200 {
+
+    &:hover {
+      background: linear-gradient(to bottom, #68767c, #718087 50%, #5f6c72 50%);
+    }
+
   }
 
 }
@@ -620,10 +630,24 @@ button:focus,
       margin: 0 6px;
     }
 
-    img {
-      width: 23px;
+    &-icon {
+      width: 25px;
+      height: 25px;
       margin: 0 7px 0 0;
       flex-shrink: 0;
+
+      &.icon-viber {
+        background: url(../images/icon-viber.png) no-repeat center center;
+      }
+
+      &.icon-whatsapp {
+        background: url(../images/icon-whatsapp.png) no-repeat center center;
+      }
+
+      &.icon-telegram {
+        background: url(../images/icon-telegram.png) no-repeat center center;
+      }
+
     }
 
     a {
