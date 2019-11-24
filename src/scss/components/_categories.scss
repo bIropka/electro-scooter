@@ -1,17 +1,21 @@
 .categories {
-  padding: 15px 20px;
   background: #f4f4f4;
 
   ul {
+    padding: 15px 20px;
     list-style: none;
   }
 
   li {
-    display: flex;
+    display: none;
     align-items: center;
-    margin: 0 0 20px;
+    margin: 20px 0 0;
 
-    &:last-of-type {
+    &.categories-top {
+      display: flex;
+    }
+
+    &:first-of-type {
       margin: 0;
     }
 
@@ -21,6 +25,7 @@
     display: block;
     width: 36px;
     margin: 0 20px 0 0;
+    flex-shrink: 0;
   }
 
   &-link {
@@ -30,6 +35,99 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $color-black;
+    flex-grow: 1;
+    position: relative;
+
+    &:after {
+      content: '\f105';
+      display: block;
+      height: 22px;
+      font-family: FontAwesome, sans-serif;
+      font-size: 22px;
+      line-height: 22px;
+      color: $color-green-text;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+  }
+
+  &-all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #e0e2e3;
+    text-decoration: none;
+
+    &-text {
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    &-value {
+      padding: 0 7px;
+      background: $color-blue;
+      border-radius: 0 10px 10px 10px;
+      font-size: 11px;
+      line-height: 20px;
+      font-weight: 600;
+      color: $color-white;
+    }
+
+  }
+
+  @include more-1200 {
+    border-radius: $br;
+    overflow: hidden;
+
+    ul {
+      padding: 35px 30px;
+    }
+
+    li {
+      display: flex;
+      position: relative;
+
+      &:last-of-type {
+
+        .categories-link:before {
+          display: none;
+        }
+
+      }
+
+    }
+
+    &-link {
+      position: static;
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        height: 1px;
+        background: url(../images/categories-decor.png) no-repeat left top;
+        position: absolute;
+        left: 56px;
+        right: 0;
+        top: calc(100% + 10px);
+      }
+
+    }
+
+    &-all {
+      display: none;
+    }
+
   }
 
 }
