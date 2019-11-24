@@ -41,6 +41,7 @@ svg {
   min-width: 320px;
   max-width: 2000px;
   margin: 0 auto;
+  padding: 64px 0 0;
   overflow: hidden;
   opacity: 0;
 
@@ -585,6 +586,11 @@ button:focus,
 .contacts {
   margin: 25px 0;
   text-align: center;
+  color: $color-white;
+
+  &-icon {
+    display: none;
+  }
 
   &-phone {
     font-size: 20px;
@@ -632,6 +638,7 @@ button:focus,
 
 .address-hours {
   text-align: center;
+  color: $color-white;
 
   &-icon {
     display: none;
