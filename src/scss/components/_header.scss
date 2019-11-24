@@ -233,11 +233,14 @@
 
       &-column {
         position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        left: 15px;
+        top: 0;
       }
 
+    }
+
+    &-logo-icon {
+      margin: 0 0 5px;
     }
 
     &-search {

@@ -81,7 +81,8 @@ svg {
     }
 
     &-content {
-      flex-grow: 1;
+      width: calc(100% - 300px);
+      flex-shrink: 0;
     }
 
     &-delimiter {
@@ -592,6 +593,8 @@ button:focus,
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 222px;
+  margin: 0 auto;
   padding: 10px;
   background: linear-gradient(to bottom, #41bb6d, #47c277 50%, #3cb464 50%);
   border-radius: $br;
@@ -836,7 +839,6 @@ button:focus,
   display: flex;
   justify-content: center;
   list-style: none;
-  margin: 20px 0 0;
 
   li {
 

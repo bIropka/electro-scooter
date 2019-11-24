@@ -1,3 +1,272 @@
 .hero {
+  width: 100%;
+  position: relative;
+
+  .slick-dots {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+
+    li {
+
+      button {
+        display: block;
+        width: 21px;
+        height: 21px;
+        margin: 0 3px;
+        border: 5px solid rgba(0, 0, 0, 0);
+        background: $color-blue;
+        background-clip: content-box;
+        border-radius: 50%;
+        font-size: 0;
+        color: transparent;
+      }
+
+      &.slick-active {
+
+        button {
+          background: #f1f1f1;
+          border: 5px solid $color-brown;
+          box-shadow: 0 0 0 2px #f1f1f1;
+        }
+
+      }
+
+    }
+
+  }
+
+  &-image {
+    width: 350px;
+    position: absolute;
+    left: calc(50% - 145px);
+    bottom: 110px;
+  }
+
+  &-slide-column {
+
+    &:nth-of-type(1) {
+      padding: 55px 30px;
+      background: $color-brown url(../images/heor-slide-decor.png) no-repeat calc(50% - 10px) -70px;
+      background-size: 220px auto;
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        width: calc(100% + 20px);
+        height: 30px;
+        background: $color-brown;
+        position: absolute;
+        left: -10px;
+        top: calc(100% - 15px);
+        transform: rotate(-2deg);
+      }
+
+    }
+
+    &:nth-of-type(2) {
+      padding: 90px 30px 25px;
+      background: url(../images/hero-slide-background.jpg) no-repeat;
+      background-size: cover;
+    }
+
+  }
+
+  &-title {
+    display: block;
+    padding: 0 0 20px;
+    max-height: 121px;
+    overflow: hidden;
+    font-size: 25px;
+    line-height: 32px;
+    color: $color-white;
+    text-align: center;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: $color-blue;
+      position: absolute;
+      right: calc(50% - 8px);
+      bottom: 0;
+      z-index: 2;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 3px;
+      background: $color-green;
+      position: absolute;
+      left: calc(50% + 15px);
+      bottom: 0;
+      z-index: 2;
+    }
+
+  }
+
+  &-text {
+    display: none;
+  }
+
+  &-cost {
+    display: block;
+    font-size: 34px;
+    line-height: 40px;
+    color: $color-white;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .btn {
+    margin: 20px auto 0;
+    @include shadow;
+  }
+
+  @include more-768 {
+
+    &-slide {
+      display: flex!important;
+    }
+
+    .slick-dots {
+      justify-content: flex-start;
+      left: 38px;
+      top: auto;
+      bottom: 40px;
+    }
+
+    &-slide-column {
+
+      &:nth-of-type(1) {
+        width: 60%;
+        padding: 30px 100px 80px 45px;
+        background: $color-brown url(../images/heor-slide-decor.png) no-repeat center center;
+        background-size: 385px auto;
+
+        &:after {
+          width: 30px;
+          height: auto;
+          background: $color-brown;
+          position: absolute;
+          left: calc(100% - 10px);
+          top: -5px;
+          bottom: -5px;
+          transform: rotate(3deg);
+        }
+
+      }
+
+      &:nth-of-type(2) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 40%;
+        padding: 230px 40px 40px;
+        background-position: right center;
+      }
+
+    }
+
+    &-title {
+      max-height: 135px;
+      font-size: 35px;
+      line-height: 39px;
+      text-align: left;
+
+      &:before {
+        left: 0;
+      }
+
+      &:after {
+        left: 37px;
+      }
+
+    }
+
+    &-text {
+      display: block;
+      margin: 20px 0 0;
+      font-size: 17px;
+      line-height: 27px;
+      color: $color-white;
+    }
+
+    &-cost {
+      text-align: left;
+      font-size: 37px;
+      line-height: 40px;
+    }
+
+    &-image {
+      width: 490px;
+      top: 25px;
+      left: calc(50% - 50px);
+    }
+
+    .btn {
+      margin: 20px 0 0;
+    }
+
+  }
+
+  @include more-1200 {
+
+    .slick-list {
+      overflow: visible;
+    }
+
+    .slick-dots {
+      left: 42px;
+      bottom: 35px;
+    }
+
+    &-slide-column {
+
+      &:nth-of-type(1) {
+        padding: 40px 130px 80px 50px;
+        background: $color-brown url(../images/heor-slide-decor.png) no-repeat center bottom;
+        background-size: 397px auto;
+        border-radius: $br 0 0 $br;
+
+        &:after {
+          display: none;
+        }
+
+      }
+
+      &:nth-of-type(2) {
+        padding: 230px 40px 35px;
+        border-radius: 0 $br $br 0;
+      }
+
+    }
+
+    &-title {
+      max-height: 161px;
+      font-size: 42px;
+      line-height: 47px;
+    }
+
+    &-cost {
+      text-align: center;
+    }
+
+    &-image {
+      width: 549px;
+      top: 10px;
+    }
+
+    .btn {
+      margin: 20px auto 0;
+    }
+
+  }
 
 }
