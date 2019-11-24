@@ -567,6 +567,7 @@ button:focus,
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
+  text-transform: uppercase;
   color: $color-white;
   transform: skew(-7deg);
 
@@ -704,7 +705,6 @@ button:focus,
     font-size: 14px;
     line-height: 24px;
     font-weight: 600;
-    @include link-dashed(#51b0df, $color-white);
   }
 
   span {

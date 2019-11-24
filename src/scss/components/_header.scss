@@ -186,6 +186,14 @@
 
   }
 
+  .address-hours {
+
+    a {
+      @include link-dashed(#51b0df, $color-black);
+    }
+
+  }
+
   @include more-768 {
 
     &-bottom {
@@ -230,8 +238,7 @@
 
     }
 
-    &-search,
-    &-search.active {
+    &-search {
       width: 100%;
       margin: 0 0 30px;
       padding: 0 20px;
@@ -288,6 +295,11 @@
 
       a {
         color: $color-blue-text;
+
+        &:after {
+          display: none;
+        }
+
       }
 
     }
