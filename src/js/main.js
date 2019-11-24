@@ -1,6 +1,12 @@
 $(function () {
 
     const wrapper = $('.wrapper');
+    const headerBottom = $('.header-bottom .wrapper-inner');
+    const headerNav = $('.header-nav');
+    const headerContacts = $('.header .contacts');
+    const headerAddress = $('.header .address-hours');
+    const headerSearch = $('.header-search');
+    const headerCart = $('.header-cart');
 
     setTimeout(function () {
         wrapper.animate({opacity: 1}, 500);
@@ -10,6 +16,20 @@ $(function () {
 
     $(window).on('resize', function () {
         pageRepaint();
+    });
+
+    $('.header-search button[type="submit"]').on('click', function (event) {
+        event.preventDefault();
+        const form = $(this).parents('.header-search');
+        if ($(window).width() < 1200) {
+            if(form.hasClass('active')) {
+                form.submit();
+            } else {
+                form.addClass('active');
+            }
+        } else {
+            form.submit();
+        }
     });
 
     $('.field-rate-list i').on('click', function () {
@@ -89,17 +109,36 @@ $(function () {
         const target = $(event.target);
 
         if (target.closest('[data-select]').length === 0) $('.active[data-select]').removeClass('active');
+        if (target.closest('.header-search').length === 0) $('.header-search').removeClass('active');
 
     });
 
     function pageRepaint() {
         if ($(window).width() < 768) {
-
+            renderMobileHeader();
         } else if ($(window).width() < 1200) {
-
+            renderTabletHeader();
         } else {
-
+            renderDesktopHeader();
         }
+    }
+
+    function renderMobileHeader() {
+        headerSearch.insertBefore(headerCart);
+        headerContacts.appendTo(headerNav);
+        headerAddress.appendTo(headerNav);
+    }
+
+    function renderTabletHeader() {
+        headerSearch.insertBefore(headerCart);
+        headerContacts.appendTo(headerBottom);
+        headerAddress.appendTo(headerNav);
+    }
+
+    function renderDesktopHeader() {
+        headerSearch.appendTo(headerBottom);
+        headerContacts.appendTo(headerBottom);
+        headerAddress.appendTo(headerBottom);
     }
 
 });

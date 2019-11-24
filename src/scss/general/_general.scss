@@ -563,7 +563,7 @@ button:focus,
   justify-content: center;
   padding: 10px;
   background: linear-gradient(to bottom, #41bb6d, #47c277 50%, #3cb464 50%);
-  border-radius: 6px;
+  border-radius: $br;
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
@@ -634,6 +634,62 @@ button:focus,
 
   }
 
+  @include more-768 {
+    margin: 0;
+    text-align: left;
+
+    &-icon + .contacts-row .contacts-phone {
+      font-weight: 600;
+    }
+
+    &-text {
+      margin: 0 0 10px;
+    }
+
+    &-social {
+      justify-content: flex-start;
+      margin: 5px 0 0;
+
+      li {
+        margin: 0 12px 0 0;
+
+        &:last-of-type {
+          margin: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+  @include more-1200 {
+
+    &-row {
+      display: flex;
+      align-items: center;
+      margin: 0 0 15px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+
+    }
+
+    &-text {
+      margin: 0;
+    }
+
+    &-phone {
+      margin: 0 20px 0 0;
+    }
+
+    &-social {
+      margin: 0;
+    }
+
+  }
+
 }
 
 .address-hours {
@@ -656,6 +712,14 @@ button:focus,
     margin: 5px 0;
     font-size: 14px;
     line-height: 22px;
+  }
+
+  @include more-768 {
+
+    a {
+      font-size: 15px;
+    }
+
   }
 
 }
