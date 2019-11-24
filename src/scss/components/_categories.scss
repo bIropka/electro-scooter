@@ -1,0 +1,35 @@
+.categories {
+  padding: 15px 20px;
+  background: #f4f4f4;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+  }
+
+  &-icon {
+    display: block;
+    width: 36px;
+    margin: 0 20px 0 0;
+  }
+
+  &-link {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-black;
+  }
+
+}

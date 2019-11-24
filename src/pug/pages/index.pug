@@ -1,6 +1,21 @@
 extends ../layout/index
 
 block title
-    | Main
+	| Main
 
 block content
+	.wrapper-row
+		.wrapper-sidebar
+			include ../modules/components/index/categories
+		.wrapper-content
+			include ../modules/components/index/hero
+			include ../modules/components/index/advantages
+	.wrapper-delimiter
+	.wrapper-inner
+		include ../modules/components/index/products
+		include ../modules/components/index/products
+		include ../modules/components/index/products
+		include ../modules/components/index/promo
+		include ../modules/components/index/articles
+		include ../modules/components/index/reviews
+		include ../modules/components/index/certificates
