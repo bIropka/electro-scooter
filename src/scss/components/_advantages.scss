@@ -85,6 +85,14 @@
     line-height: 20px;
   }
 
+  .slick-prev {
+    left: -20px;
+  }
+
+  .slick-next {
+    right: -20px;
+  }
+
   @include more-768 {
     padding: 20px 55px 0;
 

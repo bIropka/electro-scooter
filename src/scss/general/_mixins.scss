@@ -16,6 +16,12 @@
   }
 }
 
+@mixin more-930 {
+  @media (min-width: 930px) {
+    @content;
+  }
+}
+
 @mixin more-992 {
   @media (min-width: 992px) {
     @content;

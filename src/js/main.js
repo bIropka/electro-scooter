@@ -10,6 +10,7 @@ $(function () {
   const footerSubscribe = $('.footer-subscribe');
   const footerCopyrights = $('.footer-copyrights');
   const footerSocial = $('.footer-social');
+  const chooser = $('.chooser');
 
   setTimeout(function () {
     wrapper.animate({opacity: 1}, 500);
@@ -108,11 +109,26 @@ $(function () {
     costDOM.html(amountDOM.val() * costValue + ' <i class="fa fa-rub"></i>');
   });
 
+  chooser.find('.chooser-value').on('click', function () {
+    $(this).parents('.chooser').toggleClass('active');
+  });
+
+  chooser.find('ul li').on('click', function () {
+    if (!$(this).hasClass('active')) {
+      const value = $(this).text();
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+      $(this).parents('.chooser').find('.chooser-value').text(value);
+      $(this).parents('.chooser').removeClass('active');
+    }
+  });
+
   $(document).on('click', function (event) {
     const target = $(event.target);
 
     if (target.closest('[data-select]').length === 0) $('.active[data-select]').removeClass('active');
     if (target.closest('.header-search').length === 0) $('.header-search').removeClass('active');
+    if (target.closest('.chooser').length === 0) chooser.removeClass('active');
 
   });
 

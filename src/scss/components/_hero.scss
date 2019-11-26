@@ -76,39 +76,12 @@
 
   &-title {
     display: block;
-    padding: 0 0 20px;
     max-height: 121px;
     overflow: hidden;
     font-size: 25px;
     line-height: 32px;
     color: $color-white;
     text-align: center;
-    position: relative;
-
-    &:before {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 3px;
-      background: $color-blue;
-      position: absolute;
-      right: calc(50% - 8px);
-      bottom: 0;
-      z-index: 2;
-    }
-
-    &:after {
-      content: '';
-      display: block;
-      width: 12px;
-      height: 3px;
-      background: $color-green;
-      position: absolute;
-      left: calc(50% + 15px);
-      bottom: 0;
-      z-index: 2;
-    }
-
   }
 
   &-text {
@@ -180,15 +153,6 @@
       font-size: 35px;
       line-height: 39px;
       text-align: left;
-
-      &:before {
-        left: 0;
-      }
-
-      &:after {
-        left: 37px;
-      }
-
     }
 
     &-text {
