@@ -72,6 +72,7 @@ gulp.task('libs', function () {
         'node_modules/jquery-validation/dist/jquery.validate.min.js',
         'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
         'node_modules/wnumb/wNumb.js',
+        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
         'node_modules/nouislider/distribute/nouislider.min.js'
     ])
         .pipe(concat('libs.js'))

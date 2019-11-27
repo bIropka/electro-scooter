@@ -1,4 +1,5 @@
 .footer {
+  margin: 30px 0 0;
   color: $color-white;
 
   &-top {
@@ -311,6 +312,7 @@
   }
 
   @include more-1200 {
+    margin: 50px 0 0;
 
     &-top {
 

@@ -1,3 +1,152 @@
 .articles {
+  padding: 20px 0 10px;
+
+  .product-header {
+    width: 100%;
+
+    .chooser {
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0;
+
+    .slick-arrow {
+      top: -57px;
+
+      &.slick-prev {
+        left: 0;
+      }
+
+      &.slick-next {
+        right: 0;
+      }
+
+    }
+
+  }
+
+  &-card {
+
+    &-image {
+      width: 155px;
+      height: 130px;
+      margin: 0 auto 20px;
+      padding: 8px;
+      border: 8px solid $color-green-text;
+
+      img {
+        height: 100%;
+        max-width: none;
+      }
+
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      text-align: left;
+      font-size: 17px;
+      line-height: 24px;
+      font-weight: 600;
+
+      a {
+        color: $color-blue-text;
+      }
+
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 15px;
+      line-height: 26px;
+    }
+
+  }
+
+  @include more-768 {
+
+    .product-header {
+      margin: 0;
+
+      .chooser {
+        margin: 0 130px 20px 0;
+      }
+
+    }
+
+    &-card {
+      display: flex!important;
+      margin: 25px 0;
+
+      &-image {
+        margin: 0 50px 0 0;
+      }
+
+    }
+
+    &-list {
+
+      .slick-arrow {
+        top: -58px;
+
+        &.slick-prev {
+          left: auto;
+          right: 60px;
+        }
+
+      }
+
+    }
+
+  }
+
+  @include more-1200 {
+
+    .product-header {
+
+      .chooser {
+        margin: 0 130px 20px 0;
+      }
+
+    }
+
+    &-card {
+      margin: 25px 15px 0;
+
+      h3 {
+
+        a:hover {
+          color: $color-black;
+        }
+
+      }
+
+    }
+
+    &-list {
+      width: calc(100% + 30px);
+      margin: 0 -15px;
+
+      .slick-arrow {
+        top: -47px;
+
+        &.slick-prev {
+          right: 75px;
+        }
+
+        &.slick-next {
+          right: 15px;
+        }
+
+      }
+
+    }
+
+  }
 
 }

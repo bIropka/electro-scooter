@@ -1,3 +1,194 @@
 .reviews {
+  padding: 0 0 10px;
+
+  .product-header {
+    width: 100%;
+    margin: 0 0 20px;
+    text-align: center;
+
+    h2 {
+      text-align: left;
+    }
+
+    &-link {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 700;
+      color: $color-black;
+      text-transform: uppercase;
+    }
+
+  }
+
+  &-list {
+
+    .slick-arrow {
+      top: -50px;
+
+      &.slick-prev {
+        left: 0;
+      }
+
+      &.slick-next {
+        right: 0;
+      }
+
+    }
+
+  }
+
+  &-card {
+    padding: 10px 0 0;
+
+    &-header {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 0 0 60px;
+      position: relative;
+      font-size: 17px;
+      line-height: 24px;
+
+      .rate {
+        width: 100%;
+        margin: 5px 0 0;
+        text-align: left;
+      }
+
+    }
+
+    &-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    &-name {
+      margin: 0 10px 0 0;
+      font-weight: 600;
+    }
+
+    &-city {
+      color: #b7b8b8;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 26px;
+
+      a {
+        font-weight: 600;
+        color: $color-blue-text;
+      }
+
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+    }
+
+    &-value {
+      display: flex;
+      margin: 0 0 0 15px;
+      flex-shrink: 0;
+      font-size: 14px;
+      line-height: 21px;
+
+      img {
+        width: 21px;
+        margin: 0 5px 0 0;
+        flex-shrink: 0;
+      }
+
+    }
+
+  }
+
+  @include more-768 {
+
+    .product-header {
+      margin: 0;
+
+      .section-header {
+        margin: 0;
+      }
+
+      &-link {
+        margin: 5px 130px 0 0;
+      }
+
+    }
+
+    &-list {
+
+      .slick-arrow {
+        top: -22px;
+
+        &.slick-prev {
+          left: auto;
+          right: 60px;
+        }
+
+        &.slick-next {
+          right: 0;
+        }
+
+      }
+
+    }
+
+    &-card {
+      margin: 15px 0;
+
+      &-header {
+        padding: 0;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        .rate {
+          margin: 0 0 0 15px;
+        }
+
+      }
+
+      &-photo {
+        flex-shrink: 0;
+        margin: 0 15px 0 0;
+        position: static;
+      }
+
+    }
+
+  }
+
+  @include more-1200 {
+
+    .product-header {
+
+      &-link:hover {
+        color: $color-blue-text;
+      }
+
+    }
+
+    &-card {
+
+      p {
+
+        a:hover {
+          color: $color-black;
+        }
+
+      }
+
+    }
+
+  }
 
 }

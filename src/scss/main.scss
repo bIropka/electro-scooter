@@ -4,6 +4,7 @@
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 @import "../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
 @import "../../node_modules/nouislider/distribute/nouislider.min.css";
+@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css";
 
 @import "general/variables";
 @import "general/mixins";
@@ -22,3 +23,4 @@
 @import "components/categories";
 @import "components/advantages";
 @import "components/promo";
+@import "components/certificates";

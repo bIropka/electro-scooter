@@ -17,6 +17,7 @@
   }
 
   &-image {
+    margin: 10px 0 0;
     padding: 8px;
     border: 8px solid $color-green;
     box-shadow: inset 0 0 0 8px $color-white;
@@ -26,37 +27,11 @@
 
   &-link {
     margin: 15px 0 0;
-    padding: 0 0 0 25px;
     font-size: 17px;
     line-height: 30px;
     font-weight: 600;
     color: $color-blue-text;
     align-self: center;
-    position: relative;
-
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border-left: 6px solid #acacac;
-      border-top: 6px solid transparent;
-      border-bottom: 4px solid transparent;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-    }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      left: 8px;
-    }
-
   }
 
   @include more-768 {
@@ -94,7 +69,7 @@
     &-image {
       max-width: 50%;
       position: absolute;
-      right: 0;
+      right: 15px;
       top: 0;
     }
 
@@ -102,6 +77,11 @@
       position: absolute;
       left: 0;
       top: calc(100% + 50px);
+
+      &:hover {
+        color: $color-black;
+      }
+
     }
 
   }
