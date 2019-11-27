@@ -1,0 +1,13 @@
+extends ../layout/error-400
+
+block title
+	| Error 400
+
+block content
+	.page-error-image
+		img(src="images/error-400-image.jpg" alt="error 500")
+	.page-error-content
+		h1 Ошибка 404 <br>(Page Not Found)
+		p Возможно, она была перемещена или удалена с нашего сервера. Попробуйте воспользоваться <br>поиском или каталогом товаров
+		a(href="/").btn На главную страницу
+

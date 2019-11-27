@@ -546,6 +546,10 @@ button:focus,
     transform: skew(7deg);
   }
 
+  &.btn-blue {
+    background: linear-gradient(to bottom, #2ba5de, #30b0e4 50%, #2ba5e0 50%);
+  }
+
   @include more-1200 {
 
     &:hover {
@@ -1145,6 +1149,244 @@ time.date {
   }
 
   span {
+
+  }
+
+}
+
+.page {
+
+  &-error-400,
+  &-error-500 {
+    padding: 0;
+
+    .page-error-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      color: $color-white;
+
+      h1 {
+        margin: 0;
+        text-align: center;
+      }
+
+      a {
+        @include shadow;
+      }
+
+      p {
+        margin: 15px 0 10px;
+        font-size: 15px;
+        line-height: 25px;
+      }
+
+      @include more-768 {
+        padding: 0;
+
+        h1 {
+          font-size: 47px;
+          line-height: 50px;
+        }
+
+        p {
+          font-size: 23px;
+          line-height: 30px;
+        }
+
+      }
+
+      @include more-1200 {
+        padding: 90px 0;
+
+        h1 {
+          font-size: 60px;
+          line-height: 67px;
+        }
+
+        p {
+          margin: 25px 0;
+
+          br {
+            display: none;
+          }
+
+        }
+
+        a {
+          width: 260px;
+          font-size: 17px;
+        }
+
+      }
+
+    }
+
+  }
+
+  &-error-400 {
+
+    .page-error-content {
+      padding: 40px 30px;
+      background: #2ba5e0;
+      flex-grow: 1;
+
+      p {
+
+        br {
+          display: none;
+        }
+
+      }
+
+      a {
+        margin: 15px 0 0;
+      }
+
+      @include more-768 {
+        padding: 60px 0;
+
+        h1 {
+
+          br {
+            display: none;
+          }
+
+        }
+
+        p {
+          width: 580px;
+          margin: 10px auto;
+        }
+
+      }
+
+      @include more-1200 {
+
+        h1 {
+
+          br {
+            display: none;
+          }
+
+        }
+
+      }
+
+    }
+
+    .page-error-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 30px;
+      flex-shrink: 0;
+
+      @include more-768 {
+        padding: 90px 60px;
+      }
+
+    }
+
+  }
+
+  &-error-500 {
+
+    .page-error-content {
+      padding: 40px 10px;
+      background: #3cb464;
+      color: $color-white;
+      flex-shrink: 0;
+
+      h1 {
+
+        br {
+          display: none;
+        }
+
+      }
+
+      p {
+
+        br {
+          display: none;
+        }
+
+      }
+
+      a {
+        margin: 25px 0 0;
+      }
+
+      @include more-768 {
+        padding: 60px 0;
+
+        h1 {
+
+          br {
+            display: block;
+          }
+
+        }
+
+        p {
+
+          br {
+            display: block;
+          }
+
+        }
+
+      }
+
+      @include more-1200 {
+        padding: 90px 0;
+
+        h1 {
+          font-size: 60px;
+          line-height: 67px;
+        }
+
+        p {
+          margin: 25px 0;
+
+          br {
+            display: none;
+          }
+
+        }
+
+      }
+
+    }
+
+    .page-error-image {
+      padding: 0 35px;
+      flex-grow: 1;
+
+      img {
+        max-width: 250px;
+      }
+
+      @include more-768 {
+
+        img {
+          max-width: 540px;
+        }
+
+      }
+
+      @include more-1200 {
+
+        img {
+          max-width: none;
+        }
+
+      }
+
+    }
 
   }
 
