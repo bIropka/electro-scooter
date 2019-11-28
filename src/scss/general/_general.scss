@@ -712,6 +712,14 @@ button:focus,
 
   }
 
+  @include more-1200 {
+
+    span {
+      margin: 5px 0 0;
+    }
+
+  }
+
 }
 
 .slick-arrow {
@@ -815,17 +823,27 @@ button:focus,
 }
 
 .chooser {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 40px 7px 25px;
+  border: 2px solid #e5e8e8;
+  border-radius: 20px;
   position: relative;
 
+  &-text,
   &-value {
-    padding: 7px 40px 7px 25px;
-    border: 2px solid #e5e8e8;
-    border-radius: 20px;
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
     text-transform: uppercase;
+  }
+
+  &-text {
+    display: none;
+    margin: 0 10px 0 0;
+  }
+
+  &-value {
     cursor: pointer;
 
     &:before,
@@ -892,6 +910,14 @@ button:focus,
 
       }
 
+    }
+
+  }
+
+  @include more-768 {
+
+    &-text {
+      display: block;
     }
 
   }

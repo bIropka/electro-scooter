@@ -319,6 +319,9 @@
       .footer-column {
 
         &:first-of-type {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
           width: calc(100% - 450px);
         }
 
@@ -333,6 +336,16 @@
 
       }
 
+    }
+
+    &-logo {
+      display: block;
+      width: 88px;
+      flex-shrink: 0;
+    }
+
+    &-data {
+      width: calc(100% - 115px);
     }
 
     &-copyrights {
