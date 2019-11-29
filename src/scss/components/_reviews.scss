@@ -94,13 +94,14 @@
     }
 
     &-value {
-      display: flex;
       margin: 0 0 0 15px;
       flex-shrink: 0;
       font-size: 14px;
       line-height: 21px;
 
       img {
+        display: inline-block;
+        vertical-align: middle;
         width: 21px;
         margin: 0 5px 0 0;
         flex-shrink: 0;
