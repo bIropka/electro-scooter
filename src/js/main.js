@@ -22,6 +22,13 @@ $(function () {
     pageRepaint();
   });
 
+  $('[data-removable-close]').on('click', function () {
+    $(this).parents('[data-removable]')
+      .fadeOut(400, function () {
+        $(this).detach();
+      });
+  });
+
   $('.header-search button[type="submit"]').on('click', function (event) {
     event.preventDefault();
     const form = $(this).parents('.header-search');
@@ -87,26 +94,24 @@ $(function () {
     }
   });
 
-  $('.amount-chooser .fa').on('click', function () {
-    const amountDOM = $(this).parents('.amount-chooser').find('input');
+  $('.amount-chooser-control').on('click', function () {
+    const amountDOM = $(this).siblings('input');
     const amountValue = parseInt(amountDOM.val());
-    if ($(this).hasClass('fa-chevron-left')) {
+    if ($(this).hasClass('amount-chooser-minus')) {
       if (amountValue > 1) {
         amountDOM.val(amountValue - 1);
       }
-    } else if ($(this).hasClass('fa-chevron-right')) {
+    } else if ($(this).hasClass('amount-chooser-plus')) {
       amountDOM.val(amountValue + 1);
     }
     amountDOM.trigger('change');
   });
 
   $('.amount-chooser input').on('change', function () {
-    const amountDOM = $(this).parents('.amount-chooser').find('input');
-    const costDOM = $(this).parents('.amount-chooser').siblings('.card-cost');
-    const costValue = costDOM.length
-      ? parseInt($(this).parents('[data-cost]').attr('data-cost'))
-      : false;
-    costDOM.html(amountDOM.val() * costValue + ' <i class="fa fa-rub"></i>');
+    const costDOM = $(this).parents('.amount-chooser').siblings('.card-cost').children('.card-cost-value');
+    const amount = parseInt($(this).val());
+    const itemCost = parseInt($(this).parents('.amount-chooser').attr('data-cost'));
+    costDOM.text(amount * itemCost + ' руб.');
   });
 
   chooser.find('.chooser-value').on('click', function () {

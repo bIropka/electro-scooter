@@ -321,17 +321,72 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .amount-chooser {
-  display: inline-flex;
-  border: 1px solid #e4e4e4;
-  border-radius: 4px;
 
-  .fa {
-    width: 41px;
-    height: 41px;
-    text-align: center;
+  &-label {
+    display: block;
+    margin: 0 0 10px;
     font-size: 14px;
-    line-height: 41px;
-    color: #db8957;
+    line-height: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &-body {
+    display: flex;
+    width: 160px;
+    margin: 0 auto;
+    border: 1px solid #e4e4e4;
+    border-radius: $br;
+    overflow: hidden;
+    @include shadow;
+  }
+
+  &-control {
+    width: 42px;
+    height: 42px;
+    position: relative;
+
+    &.amount-chooser-minus {
+      background: $color-green-text;
+
+      &:before {
+        content: '';
+        width: 22px;
+        height: 2px;
+        background: $color-white;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+    }
+
+    &.amount-chooser-plus {
+      background: $color-blue-text;
+
+      &:before,
+      &:after {
+        content: '';
+        width: 22px;
+        height: 2px;
+        background: $color-white;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      &:after {
+        transform-origin: center center;
+        transform: rotate(90deg);
+      }
+
+    }
 
     @include more-1200 {
       cursor: pointer;
@@ -343,10 +398,31 @@ textarea:focus:-ms-input-placeholder {
     width: 54px;
     padding: 0 5px;
     border-radius: 0;
-    border-top: none;
-    border-bottom: none;
+    border: none;
     text-align: center;
     color: $color-blue-text;
+    flex-grow: 1;
+  }
+
+}
+
+.card-cost {
+
+  &-label {
+    display: block;
+    margin: 0 0 5px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &-value {
+    font-size: 25px;
+    line-height: 30px;
+    font-family: $font-title;
+    font-weight: 700;
+    color: #3c3c3c;
   }
 
 }
