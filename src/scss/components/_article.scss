@@ -1,0 +1,176 @@
+article {
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0 0 15px;
+  }
+
+  .article-image {
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    border: 20px solid #f9f9f9;
+    @include shadow;
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+  ul,
+  ol {
+    margin: 20px 0;
+    list-style: none;
+
+    li {
+      margin: 0 0 10px;
+      padding: 0 0 0 30px;
+      font-size: 16px;
+      line-height: 22px;
+      position: relative;
+
+      &:last-child {
+        margin: 0;
+      }
+
+    }
+
+  }
+
+  ul {
+
+    li {
+
+      &:before {
+        content: '';
+        display: block;
+        width: 15px;
+        height: 12px;
+        background: $color-green-text;
+        border-radius: 0 7px 7px 7px;
+        position: absolute;
+        left: 0;
+        top: 5px;
+      }
+
+    }
+
+  }
+
+  ol {
+    counter-reset: list;
+
+    li {
+
+      &:before {
+        counter-increment: list;
+        content: counter(list)'.';
+        color: $color-green-text;
+        font-weight: 600;
+        position: absolute;
+        left: 5px;
+        top: 0;
+      }
+
+    }
+
+  }
+
+  blockquote {
+    margin: 30px 0 20px;
+    padding: 50px 20px 20px;
+    border: 1px solid #e5e8e8;
+    background: #f9f9f9;
+    font-size: 15px;
+    line-height: 23px;
+    font-style: italic;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: $color-blue-text url(../images/quotes.png) no-repeat center center;
+      border-radius: 0 25px 25px 25px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -10px;
+      margin: auto;
+    }
+
+  }
+
+  .article-table {
+    width: calc(100% + 20px);
+    overflow: auto;
+
+    table {
+      min-width: 1000px;
+      border-collapse: collapse;
+      text-align: left;
+
+      th {
+        padding: 10px 20px;
+        background: $color-green-text;
+        font-size: 15px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: $color-white;
+        font-weight: 600;
+      }
+
+      td {
+        padding: 10px 20px;
+        font-size: 14px;
+        line-height: 27px;
+        border-bottom: 2px solid $color-white;
+      }
+
+      tr {
+        background: #f2f7f8;
+
+        &:nth-of-type(2n) {
+          background: #f9f9f9;
+        }
+
+        &:last-of-type {
+
+          td {
+            border-bottom: none;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include more-768 {
+
+    .article-image {
+      width: auto;
+      margin: 15px 25px 10px 0;
+      float: left;
+    }
+
+    blockquote {
+      margin: 20px 0;
+      padding: 20px 20px 20px 100px;
+
+      &:after {
+        left: 30px;
+        right: auto;
+        top: 30px;
+      }
+
+    }
+
+  }
+
+}

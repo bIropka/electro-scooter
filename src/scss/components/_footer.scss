@@ -190,6 +190,10 @@
 
   }
 
+  .to-top {
+    display: none;
+  }
+
   @include more-768 {
 
     &-top {
@@ -446,6 +450,34 @@
         background-color: #3cb464;
       }
 
+    }
+
+  }
+
+  @include more-1366 {
+
+    &-bottom {
+      position: relative;
+
+      .wrapper-inner {
+        position: static;
+      }
+
+    }
+
+    .to-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: $color-green-text;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: calc(25% - 330px);
+      margin: auto;
     }
 
   }

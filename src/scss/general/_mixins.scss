@@ -34,6 +34,12 @@
   }
 }
 
+@mixin more-1366 {
+  @media (min-width: 1366px) {
+    @content;
+  }
+}
+
 @mixin input-placeholder {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
