@@ -1,12 +1,16 @@
 .breadcrumbs {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  @include dashed-border;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: 0 0 20px;
 
   &-socials {
     width: calc(100% + 40px);
     margin: 0 -20px;
+    padding: 20px;
+    border-top: 1px solid #e5e8e8;
+    border-bottom: 1px solid #e5e8e8;
   }
 
   &-list {
@@ -14,6 +18,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0 0 15px;
     list-style: none;
   }
 
@@ -24,48 +29,53 @@
     a {
       display: flex;
       align-items: center;
-      color: $color-blue-text;
+      color: #66696a;
       text-decoration: none;
 
       &:after {
-        content: '\f054';
+        content: '';
         margin: 0 5px;
-        font-family: FontAwesome, sans-serif;
-        font-size: 10px;
-        color: #d78452;
+        width: 0;
+        height: 0;
+        border-left: 4px solid $color-blue;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
         position: relative;
         top: 1px;
-      }
-
-      i {
-        margin: 0 5px 0 0;
-        color: #9da7a8;
-        font-size: larger;
       }
 
     }
 
   }
 
-  .sharing {
-    margin: 15px 0 0;
-  }
-
   @include more-768 {
-    margin: 0 -30px;
-    padding: 15px 30px;
-    flex-direction: row;
+    width: calc(100% + 60px);
+    margin: 0 -30px 20px;
+    padding: 0 30px 15px;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1px solid #e5e8e8;
 
-    .sharing {
+    &-list {
+      padding: 0;
+    }
+
+    &-socials {
+      width: auto;
       margin: 0;
+      padding: 0;
+      border-top: none;
+      border-bottom: none;
+      flex-shrink: 0;
     }
 
   }
 
   @include more-1200 {
-    margin: 0;
-    padding: 48px 15px 15px;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 0 0 15px;
   }
 
 }

@@ -450,6 +450,7 @@ h3,
 h4 {
   font-family: $font-title;
   text-align: center;
+  color: #3c3c3c;
 
   @include more-768 {
     text-align: left;
@@ -458,6 +459,7 @@ h4 {
 }
 
 h1 {
+  margin: 0 0 20px;
   font-size: 25px;
   line-height: 30px;
 
@@ -822,6 +824,34 @@ button:focus,
 
 }
 
+.page-header {
+
+  .chooser {
+    width: 100%;
+  }
+
+  .filter-pags {
+    padding: 20px 0;
+  }
+
+  @include more-768 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 25px;
+
+    .filter-pags {
+      padding: 0;
+    }
+
+    .chooser {
+      width: auto;
+    }
+
+  }
+
+}
+
 .chooser {
   display: inline-flex;
   align-items: center;
@@ -845,6 +875,7 @@ button:focus,
 
   &-value {
     cursor: pointer;
+    flex-grow: 1;
 
     &:before,
     &:after {
@@ -1412,6 +1443,64 @@ time.date {
 
       }
 
+    }
+
+  }
+
+}
+
+.pagination {
+  width: calc(100% + 40px);
+  margin: 0 -20px;
+  padding: 20px 20px 0;
+  border-top: 1px solid #e5e8e8;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+
+  &-text {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    li {
+
+      a {
+        display: block;
+        margin: 0 8px;
+        color: $color-blue-text;
+      }
+
+      span {
+        display: block;
+        padding: 5px 13px;
+        background: $color-green-text;
+        border-radius: 0 16px 16px 16px;
+        color: $color-white;
+      }
+
+    }
+
+  }
+
+  @include more-768 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    border-top: none;
+    padding: 0;
+
+    &-text {
+      display: block;
+      text-transform: uppercase;
+      margin: 0 5px 0 0;
     }
 
   }

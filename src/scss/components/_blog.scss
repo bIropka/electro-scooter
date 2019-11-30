@@ -1,0 +1,100 @@
+.blog {
+
+  &-card {
+    margin: 0 0 30px;
+
+    h3 {
+      margin: 15px 0 10px;
+      text-align: left;
+      font-size: 17px;
+      line-height: 24px;
+      font-weight: 600;
+
+      a {
+        color: $color-blue-text;
+      }
+
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 15px;
+      line-height: 26px;
+    }
+
+    .blog-card-image {
+      max-width: 330px;
+
+      &.with-video {
+        position: relative;
+
+        &:after {
+          content: '\f04b';
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 45px;
+          height: 45px;
+          box-sizing: border-box;
+          padding: 0 0 0 3px;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, .57);
+          transition: .4s;
+          font-family: FontAwesome, sans-serif;
+          color: $color-white;
+          font-size: 20px;
+          position: absolute;
+          left: 20px;
+          top: 20px;
+        }
+
+      }
+
+    }
+
+    @include more-1200 {
+
+      &:hover {
+
+        .blog-card-image.with-video {
+
+          &:after {
+            background: rgba(0, 0, 0, .8);
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include more-768 {
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      align-content: flex-start;
+    }
+
+    &-card {
+      width: calc(50% - 15px);
+      padding: 20px;
+      border: 1px solid #e5e8e8;
+      border-radius: $br;
+    }
+
+  }
+
+  @include more-1200 {
+
+    &-card {
+      width: calc(33.33333% - 20px);
+    }
+
+  }
+
+}

@@ -68,6 +68,7 @@
   }
 
   @include more-1200 {
+    cursor: pointer;
 
     &:hover {
       color: $h-color;
@@ -75,6 +76,28 @@
       &:after {
         background: linear-gradient(to right, $h-color 3px, transparent 3px) repeat-x;
         background-size: 5px 1px;
+      }
+
+    }
+
+  }
+
+}
+
+@mixin link-dashed-clear {
+  position: static;
+
+  &:after {
+    display: none;
+  }
+
+  @include more-1200 {
+    cursor: default;
+
+    &:hover {
+
+      &:after {
+        display: none;
       }
 
     }
