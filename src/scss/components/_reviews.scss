@@ -101,6 +101,8 @@
       line-height: 21px;
 
       img {
+        display: inline-block;
+        vertical-align: middle;
         width: 21px;
         margin: 0 5px 0 0;
         flex-shrink: 0;
