@@ -1,0 +1,11 @@
+extends ../layout/inner
+
+block title
+	| Order
+
+block content
+	.wrapper-inner
+		.catalog
+			include ../modules/components/order/order-aside
+			include ../modules/components/order/order-form
+	include ../modules/components/order/order-list

@@ -1,0 +1,136 @@
+form.order-form
+  h1 Оформление заказа
+  .order-form-fieldset
+    .order-form-fieldset-header
+      h3 Персональные данные
+      span * поля, обязательные для заполнения
+    .order-form-field-wrapper
+      label.order-form-label(for="order-name") Имя *
+      input(type="text" id="order-name" placeholder="Степан")
+      span.order-form-field-validation
+        i.fa.fa-check
+    .order-form-field-wrapper
+      label.order-form-label(for="order-lastname") Фамилия *
+      input(type="text" id="order-lastname" placeholder="Иванов")
+      span.order-form-field-validation
+        i.fa.fa-check
+    .order-form-field-wrapper
+      label.order-form-label(for="order-phone") Телефон
+      input(type="tel" id="order-phone" placeholder="+7 (___) ___-___-__")
+      span.order-form-field-validation
+        i.fa.fa-check
+    .order-form-field-wrapper
+      label.order-form-label(for="order-email") E-mail *
+      input(type="text" id="order-email" placeholder="")
+      span.order-form-field-validation
+        i.fa.fa-check
+      span.order-form-field-error Некорректный адрес e-mail!
+  .order-form-fieldset
+    .order-form-fieldset-header
+      h3 Адрес доставки
+      span * поля, обязательные для заполнения
+    .order-form-field-wrapper
+      .order-form-label Страна *
+      .chooser
+        .chooser-value Россия
+        ul
+          li.active Россия
+          li по стоимости
+          li по дате добавления
+          li по цвету
+          li китайский
+        input(type="hidden" value="Россия")
+      span.order-form-field-validation
+        i.fa.fa-check
+    .order-form-field-wrapper
+      .order-form-label Область *
+      .chooser
+        .chooser-value Московская
+        ul
+          li.active Московская
+          li по стоимости
+          li по дате добавления
+          li по цвету
+          li китайский
+        input(type="hidden" value="Московская")
+      span.order-form-field-validation
+        i.fa.fa-check
+    .order-form-field-wrapper
+      .order-form-label Район *
+      .chooser
+        .chooser-value Химкинский
+        ul
+          li.active Химкинский
+          li по стоимости
+          li по дате добавления
+          li по цвету
+          li китайский
+        input(type="hidden" value="Химкинский")
+      span.order-form-field-validation
+        i.fa.fa-check
+    .order-form-field-wrapper
+      .order-form-label Город *
+      .chooser
+        .chooser-value Химки
+        ul
+          li.active Химки
+          li по стоимости
+          li по дате добавления
+          li по цвету
+          li китайский
+        input(type="hidden" value="Химки")
+      span.order-form-field-validation
+        i.fa.fa-check
+    .order-form-field-wrapper.full-width
+      label.order-form-label(for="order-address") Адрес *
+      input(type="text" id="order-address" placeholder="ул. Вторая Советская, д. 95, кв. 757")
+      span.order-form-field-validation
+        i.fa.fa-check
+  .order-form-fieldset
+    .order-form-fieldset-header
+      h3 Способ оплаты
+    .custom-radio
+      input(type="radio" name="order-radio-payment" id="order-radio-payment-1")
+      label(for="order-radio-payment-1")
+        span.custom-radio-value Наличные курьеру
+    .custom-radio
+      input(type="radio" name="order-radio-payment" id="order-radio-payment-2")
+      label(for="order-radio-payment-2")
+        span.custom-radio-value Картой на сайте
+    .custom-radio
+      input(type="radio" name="order-radio-payment" id="order-radio-payment-3")
+      label(for="order-radio-payment-3")
+        span.custom-radio-value Картой курьеру
+    .custom-radio
+      input(type="radio" name="order-radio-payment" id="order-radio-payment-4")
+      label(for="order-radio-payment-4")
+        span.custom-radio-value Яндекс.Деньги/Visa/Mastercard
+  .order-form-fieldset
+    .order-form-fieldset-header
+      h3 Способ оплаты
+    .custom-radio
+      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-1")
+      label(for="order-radio-delivery-1")
+        span.custom-radio-value Самовывоз
+    .custom-radio
+      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-2")
+      label(for="order-radio-delivery-2")
+        span.custom-radio-value Курьер
+    .custom-radio
+      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-3")
+      label(for="order-radio-delivery-3")
+        span.custom-radio-value Транспортная компания
+    .custom-radio
+      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-4")
+      label(for="order-radio-delivery-4")
+        span.custom-radio-value Почта России
+  .order-form-fieldset
+    .order-form-fieldset-header
+      h3 Персональные данные
+      span * поля, обязательные для заполнения
+    textarea(placeholder="Просьба курьеру позвонить перед доставкой.")
+  .order-form-footer
+    button(type="submit").btn
+      span.btn-text Оформить заказ
+    a(href="#").btn.btn-grey
+      span.btn-text Вернуться в корзину
