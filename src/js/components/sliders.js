@@ -1,6 +1,6 @@
 $(function () {
 
-  const sliders = $('.certificates-list, .product-list, .articles-list, .reviews-list');
+  const sliders = $('.certificates-list, .product-list, .articles-list, .reviews-slider');
 
   if (sliders.length) {
 
