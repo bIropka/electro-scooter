@@ -1,0 +1,161 @@
+.catalog-aside
+  .catalog-burger
+    .catalog-burger-closed Открыть фильтры
+    .catalog-burger-opened Закрыть фильтры
+  form.catalog-filter
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Цена товара
+      #filter-cost.catalog-filter-cost
+      .catalog-filter-cost-fields
+        label
+          input#filter-cost-from(type="text")
+        label
+          input#filter-cost-to(type="text")
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Производители
+      .custom-checkbox
+        input(type="checkbox" id="filter-checkbox-1")
+        label(for="filter-checkbox-1")
+          span
+            != 'Абсолют-Мебель'
+      .custom-checkbox
+        input(type="checkbox" id="filter-checkbox-2")
+        label(for="filter-checkbox-2")
+          span
+            != 'Evomove'
+      .custom-checkbox
+        input(type="checkbox" id="filter-checkbox-3")
+        label(for="filter-checkbox-3")
+          span
+            != 'Mealux'
+      .custom-checkbox
+        input(type="checkbox" id="filter-checkbox-4")
+        label(for="filter-checkbox-4")
+          span
+            != 'Дэми'
+      .custom-filter-hidden
+        .custom-checkbox
+          input(type="checkbox" id="filter-checkbox-5")
+          label(for="filter-checkbox-5")
+            span
+              != '5 New Item'
+        .custom-checkbox
+          input(type="checkbox" id="filter-checkbox-6")
+          label(for="filter-checkbox-6")
+            span
+              != '6 New Item'
+        .custom-checkbox
+          input(type="checkbox" id="filter-checkbox-7")
+          label(for="filter-checkbox-7")
+            span
+              != '7 New Item'
+        .custom-checkbox
+          input(type="checkbox" id="filter-checkbox-8")
+          label(for="filter-checkbox-8")
+            span
+              != '8 New Item'
+      .custom-filter-more
+        .custom-filter-more-opened Показать все
+        .custom-filter-more-closed Показать популярные
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Срок гарантии
+      .custom-radio
+        input(type="radio" name="filter-radio" id="filter-radio-1")
+        label(for="filter-radio-1")
+          span
+            != 'До 1 года'
+      .custom-radio
+        input(type="radio" name="filter-radio" id="filter-radio-2")
+        label(for="filter-radio-2")
+          span
+            != 'От 1 года до 2 лет'
+      .custom-radio
+        input(type="radio" name="filter-radio" id="filter-radio-3" checked)
+        label(for="filter-radio-3")
+          span
+            != 'От 2 до 5 лет'
+      .custom-radio
+        input(type="radio" name="filter-radio" id="filter-radio-4")
+        label(for="filter-radio-4")
+          span
+            != 'Более 5 лет'
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Цвет
+      .custom-color-checkbox
+        input(type="checkbox" id="filter-color-checkbox-1")
+        label(for="filter-color-checkbox-1")
+          span.custom-color-checkbox-color(style="background: #49b8d0;")
+          span.custom-color-checkbox-value
+            != 'Голубой'
+      .custom-color-checkbox
+        input(type="checkbox" id="filter-color-checkbox-2")
+        label(for="filter-color-checkbox-2")
+          span.custom-color-checkbox-color(style="background: #f3eacd;")
+          span.custom-color-checkbox-value
+            != 'Бук'
+      .custom-color-checkbox
+        input(type="checkbox" id="filter-color-checkbox-3")
+        label(for="filter-color-checkbox-3")
+          span.custom-color-checkbox-color(style="background: url(images/color-item-2.jpg);")
+          span.custom-color-checkbox-value
+            != 'Береза без лака'
+      .custom-color-checkbox
+        input(type="checkbox" id="filter-color-checkbox-4")
+        label(for="filter-color-checkbox-4")
+          span.custom-color-checkbox-color(style="background: #d49a75;")
+          span.custom-color-checkbox-value
+            != 'Ясень'
+      .custom-color-checkbox
+        input(type="checkbox" id="filter-color-checkbox-5")
+        label(for="filter-color-checkbox-5")
+          span.custom-color-checkbox-color(style="background: url(images/color-item.jpg);")
+          span.custom-color-checkbox-value
+            != 'Венге'
+      .custom-color-checkbox
+        input(type="checkbox" id="filter-color-checkbox-6")
+        label(for="filter-color-checkbox-6")
+          span.custom-color-checkbox-color(style="background: #d3c5a1;")
+          span.custom-color-checkbox-value
+            != 'Бежевый'
+      .custom-color-checkbox
+        input(type="checkbox" id="filter-color-checkbox-7")
+        label(for="filter-color-checkbox-7")
+          span.custom-color-checkbox-color(style="background: #b8ce74;")
+          span.custom-color-checkbox-value
+            != 'Зеленый'
+      .custom-color-checkbox
+        input(type="checkbox" id="filter-color-checkbox-8")
+        label(for="filter-color-checkbox-8")
+          span.custom-color-checkbox-color(style="background: #f0ece9;")
+          span.custom-color-checkbox-value
+            != 'Белый кедр'
+    button(type="submit").btn-icon.btn-icon-green
+      span Применить фильтры
+    button(type="reset").btn-icon.btn-icon-grey
+      span Сбросить фильтры
+  .catalog-aside-articles
+    h2.catalog-aside-title Обзоры электросамокатов
+    .catalog-aside-articles-item
+      h3
+        a(href="#") Купить гироскутер JiLong в Москве по выгодной цене
+      p Данная модель гироскутеров появилась в 2018г. JiLong 10.5 Pro New является уникальной для города...
+      time.date
+        img(src="images/icons/calendar-grey.svg" alt="calendar")
+        span 27.07.2018
+    .catalog-aside-articles-item
+      h3
+        a(href="#") Гироскутер стал более устойчив, хватает всего нескольких минут на обучение
+      p На вашем гаджете должно быть установлено приложение ТаоТао, а также включен Bluetooth...
+      time.date
+        img(src="images/icons/calendar-grey.svg" alt="calendar")
+        span 27.07.2018
+    .catalog-aside-articles-item
+      h3
+        a(href="#") Купить гироскутер JiLong в Москве по выгодной цене
+      p Данная модель гироскутеров появилась в 2018г. JiLong 10.5 Pro New является уникальной для города...
+      time.date
+        img(src="images/icons/calendar-grey.svg" alt="calendar")
+        span 27.07.2018
+    a(href="#").catalog-aside-articles-link.link-decorated Все отзывы
+  .catalog-aside-banner
+    img(src="images/banner.png" alt="banner")

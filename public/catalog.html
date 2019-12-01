@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Catalog
+    </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header-top">
+          <div class="wrapper-inner">
+            <div class="header-burger"></div>
+            <nav class="header-nav">
+              <ul class="header-menu">
+                <li class="header-menu-item has-children"><a class="header-menu-link" href="#">Магазин</a>
+                  <ul class="header-submenu">
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Доставка</a></li>
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Самовывоз</a></li>
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Оплата</a></li>
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Гарантии</a></li>
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Возврат товаров</a></li>
+                  </ul>
+                </li>
+                <li class="header-menu-item has-children"><a class="header-menu-link" href="#">Доставка и оплата</a>
+                  <ul class="header-submenu">
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Доставка</a></li>
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Самовывоз</a></li>
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Оплата</a></li>
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Гарантии</a></li>
+                    <li class="header-submenu-item"><a class="header-submenu-link" href="#">Возврат товаров</a></li>
+                  </ul>
+                </li>
+                <li class="header-menu-item"><a class="header-menu-link" href="#">Блог</a></li>
+                <li class="header-menu-item"><a class="header-menu-link" href="#">Контакты</a></li>
+              </ul>
+              <div class="contacts">
+                <div class="contacts-icon"><img src="images/icons/contact.svg" alt="contacts"></div>
+                <div class="contacts-row"><a class="contacts-phone" href="tel:+74954814037">+7 (495) 481-40-37</a><span class="contacts-text">Заказы принимаются круглосуточно</span></div>
+                <div class="contacts-row"><a class="contacts-phone" href="tel:+74954814039">+7 (495) 481-40-39</a>
+                  <ul class="contacts-social">
+                    <li><span class="contacts-social-icon icon-viber"></span><a href="#">Viber</a></li>
+                    <li><span class="contacts-social-icon icon-whatsapp"></span><a href="#">Whatsapp</a></li>
+                    <li><span class="contacts-social-icon icon-telegram"></span><a href="#">Telegram</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="address-hours">
+                <div class="address-hours-icon"><img src="images/icons/marker.svg" alt="data"></div><a href="#">г. Москва, пр. Волгоградский, д. 32, к. 8</a><span>9:00 — 18:00 (Пн — Пт)</span>
+              </div>
+            </nav>
+            <form class="header-search">
+              <input type="search" placeholder="Например, электросамокаты MaxSpeed">
+              <button type="submit"><img src="images/icons/search.svg" alt="search"></button>
+            </form><a class="header-cart" href="#"><span class="header-cart-value">27</span><span class="header-cart-icon"><img src="images/icons/basket.svg" alt="cart"></span><span class="header-cart-text">Корзина</span></a>
+          </div>
+        </div>
+        <div class="header-bottom">
+          <div class="wrapper-inner">
+            <div class="header-bottom-column">
+              <div class="header-logo"><span class="header-logo-icon"><img src="images/logo.png" alt="Electro Scooter"></span><span class="header-logo-text">Все самое лучшее только у нас</span></div>
+              <div class="btn"><span class="btn-icon"><img src="images/icons/white-callback.svg" alt="callback"></span><span class="btn-text">Обратный звонок</span></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="wrapper-inner">
+          <div class="catalog">
+            <div class="catalog-aside">
+              <div class="catalog-burger">
+                <div class="catalog-burger-closed">Открыть фильтры</div>
+                <div class="catalog-burger-opened">Закрыть фильтры</div>
+              </div>
+              <form class="catalog-filter">
+                <fieldset class="catalog-filter-block">
+                  <h3 class="catalog-filter-title">Цена товара</h3>
+                  <div class="catalog-filter-cost" id="filter-cost"></div>
+                  <div class="catalog-filter-cost-fields">
+                    <label>
+                      <input id="filter-cost-from" type="text">
+                    </label>
+                    <label>
+                      <input id="filter-cost-to" type="text">
+                    </label>
+                  </div>
+                </fieldset>
+                <fieldset class="catalog-filter-block">
+                  <h3 class="catalog-filter-title">Производители</h3>
+                  <div class="custom-checkbox">
+                    <input type="checkbox" id="filter-checkbox-1">
+                    <label for="filter-checkbox-1"><span>Абсолют-Мебель</span></label>
+                  </div>
+                  <div class="custom-checkbox">
+                    <input type="checkbox" id="filter-checkbox-2">
+                    <label for="filter-checkbox-2"><span>Evomove</span></label>
+                  </div>
+                  <div class="custom-checkbox">
+                    <input type="checkbox" id="filter-checkbox-3">
+                    <label for="filter-checkbox-3"><span>Mealux</span></label>
+                  </div>
+                  <div class="custom-checkbox">
+                    <input type="checkbox" id="filter-checkbox-4">
+                    <label for="filter-checkbox-4"><span>Дэми</span></label>
+                  </div>
+                  <div class="custom-filter-hidden">
+                    <div class="custom-checkbox">
+                      <input type="checkbox" id="filter-checkbox-5">
+                      <label for="filter-checkbox-5"><span>5 New Item</span></label>
+                    </div>
+                    <div class="custom-checkbox">
+                      <input type="checkbox" id="filter-checkbox-6">
+                      <label for="filter-checkbox-6"><span>6 New Item</span></label>
+                    </div>
+                    <div class="custom-checkbox">
+                      <input type="checkbox" id="filter-checkbox-7">
+                      <label for="filter-checkbox-7"><span>7 New Item</span></label>
+                    </div>
+                    <div class="custom-checkbox">
+                      <input type="checkbox" id="filter-checkbox-8">
+                      <label for="filter-checkbox-8"><span>8 New Item</span></label>
+                    </div>
+                  </div>
+                  <div class="custom-filter-more">
+                    <div class="custom-filter-more-opened">Показать все</div>
+                    <div class="custom-filter-more-closed">Показать популярные</div>
+                  </div>
+                </fieldset>
+                <fieldset class="catalog-filter-block">
+                  <h3 class="catalog-filter-title">Срок гарантии</h3>
+                  <div class="custom-radio">
+                    <input type="radio" name="filter-radio" id="filter-radio-1">
+                    <label for="filter-radio-1"><span>До 1 года</span></label>
+                  </div>
+                  <div class="custom-radio">
+                    <input type="radio" name="filter-radio" id="filter-radio-2">
+                    <label for="filter-radio-2"><span>От 1 года до 2 лет</span></label>
+                  </div>
+                  <div class="custom-radio">
+                    <input type="radio" name="filter-radio" id="filter-radio-3" checked>
+                    <label for="filter-radio-3"><span>От 2 до 5 лет</span></label>
+                  </div>
+                  <div class="custom-radio">
+                    <input type="radio" name="filter-radio" id="filter-radio-4">
+                    <label for="filter-radio-4"><span>Более 5 лет</span></label>
+                  </div>
+                </fieldset>
+                <fieldset class="catalog-filter-block">
+                  <h3 class="catalog-filter-title">Цвет</h3>
+                  <div class="custom-color-checkbox">
+                    <input type="checkbox" id="filter-color-checkbox-1">
+                    <label for="filter-color-checkbox-1"><span class="custom-color-checkbox-color" style="background: #49b8d0;"></span><span class="custom-color-checkbox-value">Голубой</span></label>
+                  </div>
+                  <div class="custom-color-checkbox">
+                    <input type="checkbox" id="filter-color-checkbox-2">
+                    <label for="filter-color-checkbox-2"><span class="custom-color-checkbox-color" style="background: #f3eacd;"></span><span class="custom-color-checkbox-value">Бук</span></label>
+                  </div>
+                  <div class="custom-color-checkbox">
+                    <input type="checkbox" id="filter-color-checkbox-3">
+                    <label for="filter-color-checkbox-3"><span class="custom-color-checkbox-color" style="background: url(images/color-item-2.jpg);"></span><span class="custom-color-checkbox-value">Береза без лака</span></label>
+                  </div>
+                  <div class="custom-color-checkbox">
+                    <input type="checkbox" id="filter-color-checkbox-4">
+                    <label for="filter-color-checkbox-4"><span class="custom-color-checkbox-color" style="background: #d49a75;"></span><span class="custom-color-checkbox-value">Ясень</span></label>
+                  </div>
+                  <div class="custom-color-checkbox">
+                    <input type="checkbox" id="filter-color-checkbox-5">
+                    <label for="filter-color-checkbox-5"><span class="custom-color-checkbox-color" style="background: url(images/color-item.jpg);"></span><span class="custom-color-checkbox-value">Венге</span></label>
+                  </div>
+                  <div class="custom-color-checkbox">
+                    <input type="checkbox" id="filter-color-checkbox-6">
+                    <label for="filter-color-checkbox-6"><span class="custom-color-checkbox-color" style="background: #d3c5a1;"></span><span class="custom-color-checkbox-value">Бежевый</span></label>
+                  </div>
+                  <div class="custom-color-checkbox">
+                    <input type="checkbox" id="filter-color-checkbox-7">
+                    <label for="filter-color-checkbox-7"><span class="custom-color-checkbox-color" style="background: #b8ce74;"></span><span class="custom-color-checkbox-value">Зеленый</span></label>
+                  </div>
+                  <div class="custom-color-checkbox">
+                    <input type="checkbox" id="filter-color-checkbox-8">
+                    <label for="filter-color-checkbox-8"><span class="custom-color-checkbox-color" style="background: #f0ece9;"></span><span class="custom-color-checkbox-value">Белый кедр</span></label>
+                  </div>
+                </fieldset>
+                <button class="btn-icon btn-icon-green" type="submit"><span>Применить фильтры</span></button>
+                <button class="btn-icon btn-icon-grey" type="reset"><span>Сбросить фильтры</span></button>
+              </form>
+              <div class="catalog-aside-articles">
+                <h2 class="catalog-aside-title">Обзоры электросамокатов</h2>
+                <div class="catalog-aside-articles-item">
+                  <h3><a href="#">Купить гироскутер JiLong в Москве по выгодной цене</a></h3>
+                  <p>Данная модель гироскутеров появилась в 2018г. JiLong 10.5 Pro New является уникальной для города...</p>
+                  <time class="date"><img src="images/icons/calendar-grey.svg" alt="calendar"><span>27.07.2018</span></time>
+                </div>
+                <div class="catalog-aside-articles-item">
+                  <h3><a href="#">Гироскутер стал более устойчив, хватает всего нескольких минут на обучение</a></h3>
+                  <p>На вашем гаджете должно быть установлено приложение ТаоТао, а также включен Bluetooth...</p>
+                  <time class="date"><img src="images/icons/calendar-grey.svg" alt="calendar"><span>27.07.2018</span></time>
+                </div>
+                <div class="catalog-aside-articles-item">
+                  <h3><a href="#">Купить гироскутер JiLong в Москве по выгодной цене</a></h3>
+                  <p>Данная модель гироскутеров появилась в 2018г. JiLong 10.5 Pro New является уникальной для города...</p>
+                  <time class="date"><img src="images/icons/calendar-grey.svg" alt="calendar"><span>27.07.2018</span></time>
+                </div><a class="catalog-aside-articles-link link-decorated" href="#">Все отзывы</a>
+              </div>
+              <div class="catalog-aside-banner"><img src="images/banner.png" alt="banner"></div>
+            </div>
+            <div class="wrapper-inner">
+              <div class="breadcrumbs">
+                <ul class="breadcrumbs-list">
+                  <li class="breadcrumbs-item"><a href="#">Главная</a></li>
+                  <li class="breadcrumbs-item"><a href="#">Каталог</a></li>
+                  <li class="breadcrumbs-item">Электросамокаты</li>
+                </ul>
+                <div class="breadcrumbs-socials"><img src="images/socials.png" alt="socials">
+                  <h1>Электросамокаты</h1>
+                  <div class="catalog-promo">Стандартных недорогих самокатов действительно не мало, особенно — детских и для поклонников экстремального отдыха. Обычные самокаты развивают маленькую скорость и часто сделаны из не прочных материалов таких как пластмасса, и как правило они не долговечны.</div>
+                  <div class="chooser catalog-brands">
+                    <div class="chooser-value">Выберите подкатегорию</div>
+                    <ul>
+                      <li><a href="#">Yokamura</a></li>
+                      <li><a href="#">EcoDrift</a></li>
+                      <li><a href="#">IceWheel</a></li>
+                      <li><a href="#">SmartOne</a></li>
+                      <li><a href="#">Dualtron</a></li>
+                      <li><a href="#">E-twow</a></li>
+                      <li><a href="#">Kugoo</a></li>
+                      <li><a href="#">Ultron</a></li>
+                      <li><a href="#">City coco</a></li>
+                      <li><a href="#">Joyor</a></li>
+                      <li><a href="#">Citybike ET</a></li>
+                      <li><a href="#">Xiaomi</a></li>
+                    </ul>
+                  </div>
+                  <div class="page-header">
+                    <div class="chooser">
+                      <div class="chooser-text">Сортировка:</div>
+                      <div class="chooser-value">по цене</div>
+                      <ul>
+                        <li>по имени</li>
+                        <li>по стоимости</li>
+                        <li>по дате добавления</li>
+                        <li>по цвету</li>
+                        <li>по размеру</li>
+                      </ul>
+                    </div>
+                    <div class="filter-pags"><span class="filter-pags-text">Статей на странице:</span>
+                      <ul class="filter-pags-list">
+                        <li class="active">12</li>
+                        <li>30</li>
+                        <li>все</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="catalog-list">
+                    <div class="product-card">
+                      <div class="product-card-type color-red"><img src="images/white-star.svg" alt="product type"></div><a class="product-card-image" href="#"><img src="images/product-2.jpg" alt="product"></a>
+                      <h3><a href="#">Электромотоцикл RiverToys A001AA</a></h3>
+                      <div class="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                      <div class="product-card-cost">
+                        <div class="product-card-cost-value">14 990 руб.</div>
+                        <div class="product-card-cost-old">17 000 руб.</div>
+                        <div class="product-card-cost-discount">-27%</div>
+                      </div>
+                      <ul class="product-card-data">
+                        <li>
+                          <div class="product-card-data-property">Диаметр колес</div>
+                          <div class="product-card-data-value">10,5’</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Мощность</div>
+                          <div class="product-card-data-value">1200W (2х600)</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Время зарядки</div>
+                          <div class="product-card-data-value">2-3 часа</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Цвета</div>
+                          <div class="product-card-data-value">
+                            <ul class="color-list">
+                              <li class="color-list-black"></li>
+                              <li class="color-list-green"></li>
+                              <li class="color-list-orange"></li>
+                              <li class="color-list-grey"></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="product-card-order"><a href="#"><span class="product-card-order-icon"><img src="images/icons/basket.svg" alt="cart"></span><span class="product-card-order-text">В корзину</span></a><a href="#"><span class="product-card-order-icon"><img src="images/icons/target.svg" alt="cart"></span><span class="product-card-order-text">быстрый заказ</span></a></div>
+                    </div>
+                    <div class="product-card"><a class="product-card-image" href="#"><img src="images/product-3.jpg" alt="product"></a>
+                      <h3><a href="#">Электрические роликовые коньки Segway Drift W1 Silver</a></h3>
+                      <div class="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                      <div class="product-card-cost">
+                        <div class="product-card-cost-value">14 990 руб.</div>
+                        <div class="product-card-cost-old">17 000 руб.</div>
+                        <div class="product-card-cost-discount">-27%</div>
+                      </div>
+                      <ul class="product-card-data">
+                        <li>
+                          <div class="product-card-data-property">Диаметр колес</div>
+                          <div class="product-card-data-value">10,5’</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Мощность</div>
+                          <div class="product-card-data-value">1200W (2х600)</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Время зарядки</div>
+                          <div class="product-card-data-value">2-3 часа</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Цвета</div>
+                          <div class="product-card-data-value">
+                            <ul class="color-list">
+                              <li class="color-list-black"></li>
+                              <li class="color-list-green"></li>
+                              <li class="color-list-orange"></li>
+                              <li class="color-list-grey"></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="product-card-order"><a href="#"><span class="product-card-order-icon"><img src="images/icons/basket.svg" alt="cart"></span><span class="product-card-order-text">В корзину</span></a><a href="#"><span class="product-card-order-icon"><img src="images/icons/target.svg" alt="cart"></span><span class="product-card-order-text">быстрый заказ</span></a></div>
+                    </div>
+                    <div class="product-card">
+                      <div class="product-card-type color-violet"><img src="images/white-percent.svg" alt="product type"></div><a class="product-card-image" href="#"><img src="images/product-4.jpg" alt="product"></a>
+                      <h3><a href="#">Беговел Star One Scooter (Черно-Желтый)</a></h3>
+                      <div class="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                      <div class="product-card-cost">
+                        <div class="product-card-cost-value">14 990 руб.</div>
+                        <div class="product-card-cost-old">17 000 руб.</div>
+                        <div class="product-card-cost-discount">-27%</div>
+                      </div>
+                      <ul class="product-card-data">
+                        <li>
+                          <div class="product-card-data-property">Диаметр колес</div>
+                          <div class="product-card-data-value">10,5’</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Мощность</div>
+                          <div class="product-card-data-value">1200W (2х600)</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Время зарядки</div>
+                          <div class="product-card-data-value">2-3 часа</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Цвета</div>
+                          <div class="product-card-data-value">
+                            <ul class="color-list">
+                              <li class="color-list-black"></li>
+                              <li class="color-list-green"></li>
+                              <li class="color-list-orange"></li>
+                              <li class="color-list-grey"></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="product-card-order"><a href="#"><span class="product-card-order-icon"><img src="images/icons/basket.svg" alt="cart"></span><span class="product-card-order-text">В корзину</span></a><a href="#"><span class="product-card-order-icon"><img src="images/icons/target.svg" alt="cart"></span><span class="product-card-order-text">быстрый заказ</span></a></div>
+                    </div>
+                    <div class="product-card"><a class="product-card-image" href="#"><img src="images/product-1.jpg" alt="product"></a>
+                      <h3><a href="#">Электромотоцикл RiverToys A001AA</a></h3>
+                      <div class="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                      <div class="product-card-cost">
+                        <div class="product-card-cost-value">14 990 руб.</div>
+                        <div class="product-card-cost-old">17 000 руб.</div>
+                        <div class="product-card-cost-discount">-27%</div>
+                      </div>
+                      <ul class="product-card-data">
+                        <li>
+                          <div class="product-card-data-property">Диаметр колес</div>
+                          <div class="product-card-data-value">10,5’</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Мощность</div>
+                          <div class="product-card-data-value">1200W (2х600)</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Время зарядки</div>
+                          <div class="product-card-data-value">2-3 часа</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Цвета</div>
+                          <div class="product-card-data-value">
+                            <ul class="color-list">
+                              <li class="color-list-black"></li>
+                              <li class="color-list-green"></li>
+                              <li class="color-list-orange"></li>
+                              <li class="color-list-grey"></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="product-card-order"><a href="#"><span class="product-card-order-icon"><img src="images/icons/basket.svg" alt="cart"></span><span class="product-card-order-text">В корзину</span></a><a href="#"><span class="product-card-order-icon"><img src="images/icons/target.svg" alt="cart"></span><span class="product-card-order-text">быстрый заказ</span></a></div>
+                    </div>
+                    <div class="product-card">
+                      <div class="product-card-type color-brown"><img src="images/white-tag.svg" alt="product type"></div><a class="product-card-image" href="#"><img src="images/product-5.jpg" alt="product"></a>
+                      <h3><a href="#">Электрические роликовые коньки Segway Drift W1 Silver</a></h3>
+                      <div class="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                      <div class="product-card-cost">
+                        <div class="product-card-cost-value">14 990 руб.</div>
+                        <div class="product-card-cost-old">17 000 руб.</div>
+                        <div class="product-card-cost-discount">-27%</div>
+                      </div>
+                      <ul class="product-card-data">
+                        <li>
+                          <div class="product-card-data-property">Диаметр колес</div>
+                          <div class="product-card-data-value">10,5’</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Мощность</div>
+                          <div class="product-card-data-value">1200W (2х600)</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Время зарядки</div>
+                          <div class="product-card-data-value">2-3 часа</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Цвета</div>
+                          <div class="product-card-data-value">
+                            <ul class="color-list">
+                              <li class="color-list-black"></li>
+                              <li class="color-list-green"></li>
+                              <li class="color-list-orange"></li>
+                              <li class="color-list-grey"></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="product-card-order"><a href="#"><span class="product-card-order-icon"><img src="images/icons/basket.svg" alt="cart"></span><span class="product-card-order-text">В корзину</span></a><a href="#"><span class="product-card-order-icon"><img src="images/icons/target.svg" alt="cart"></span><span class="product-card-order-text">быстрый заказ</span></a></div>
+                    </div>
+                    <div class="product-card"><a class="product-card-image" href="#"><img src="images/product-6.jpg" alt="product"></a>
+                      <h3><a href="#">Беговел Star One Scooter (Черно-Желтый)</a></h3>
+                      <div class="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+                      <div class="product-card-cost">
+                        <div class="product-card-cost-value">14 990 руб.</div>
+                        <div class="product-card-cost-old">17 000 руб.</div>
+                        <div class="product-card-cost-discount">-27%</div>
+                      </div>
+                      <ul class="product-card-data">
+                        <li>
+                          <div class="product-card-data-property">Диаметр колес</div>
+                          <div class="product-card-data-value">10,5’</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Мощность</div>
+                          <div class="product-card-data-value">1200W (2х600)</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Время зарядки</div>
+                          <div class="product-card-data-value">2-3 часа</div>
+                        </li>
+                        <li>
+                          <div class="product-card-data-property">Цвета</div>
+                          <div class="product-card-data-value">
+                            <ul class="color-list">
+                              <li class="color-list-black"></li>
+                              <li class="color-list-green"></li>
+                              <li class="color-list-orange"></li>
+                              <li class="color-list-grey"></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="product-card-order"><a href="#"><span class="product-card-order-icon"><img src="images/icons/basket.svg" alt="cart"></span><span class="product-card-order-text">В корзину</span></a><a href="#"><span class="product-card-order-icon"><img src="images/icons/target.svg" alt="cart"></span><span class="product-card-order-text">быстрый заказ</span></a></div>
+                    </div>
+                  </div>
+                  <div class="pagination">
+                    <div class="pagination-text">Страницы:</div>
+                    <ul>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li><a href="#">6</a></li>
+                      <li><span>7</span></li>
+                      <li><a href="#">8</a></li>
+                      <li><a href="#">9</a></li>
+                      <li><a href="#">10</a></li>
+                    </ul>
+                  </div>
+                  <div class="catalog-promo">У оборудования хороших марок часто бывают необычные дизайнерские решения, привлекающие внимание и позволяющие подчеркнуть индивидуальность. Например это электросамокат Xiaomi M365 Mijia, этот самокат появился довольно недавно, но прочно завоевал сердца любителей электротранспорта.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="wrapper-inner">
+            <div class="footer-column">
+              <div class="footer-logo"><img src="images/logo-footer.png" alt="Electro Scooter"></div>
+              <div class="footer-data">
+                <div class="footer-copyrights">
+                  <p><strong>© 2015-2019. Все права защищены</strong></p>
+                  <p>Electro-Skuter.ru. Интернет-магазин <a href="#">гироскутеров</a> и <a href="#">электросамокатов</a> в Москве</p>
+                </div>
+                <form class="footer-subscribe">
+                  <label for="subscribe">Подпишитесь! Новинки, <br>скидки, предложения</label>
+                  <input type="email" id="subscribe" placeholder="Ваш e-mail">
+                  <button type="submit"><img src="images/icons/white-mail.svg" alt="subscribe"></button>
+                </form>
+                <div class="contacts">
+                  <div class="contacts-icon"><img src="images/icons/contact.svg" alt="contacts"></div>
+                  <div class="contacts-row"><a class="contacts-phone" href="tel:+74954814037">+7 (495) 481-40-37</a><span class="contacts-text">Заказы принимаются круглосуточно</span></div>
+                  <div class="contacts-row"><a class="contacts-phone" href="tel:+74954814039">+7 (495) 481-40-39</a>
+                    <ul class="contacts-social">
+                      <li><span class="contacts-social-icon icon-viber"></span><a href="#">Viber</a></li>
+                      <li><span class="contacts-social-icon icon-whatsapp"></span><a href="#">Whatsapp</a></li>
+                      <li><span class="contacts-social-icon icon-telegram"></span><a href="#">Telegram</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="address-hours">
+                  <div class="address-hours-icon"><img src="images/icons/marker.svg" alt="data"></div><a href="#">г. Москва, пр. Волгоградский, д. 32, к. 8</a><span>9:00 — 18:00 (Пн — Пт)</span>
+                </div>
+              </div>
+            </div>
+            <div class="footer-column">
+              <div class="footer-social"><span class="footer-social-text">Мы в социальных сетях</span>
+                <ul>
+                  <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                  <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+              </div>
+              <div class="yandex"><img src="images/yandex.png" alt="yandex"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="wrapper-inner">
+            <div class="footer-column">
+              <div class="btn"><span class="btn-icon"><img src="images/icons/white-callback.svg" alt="callback"></span><span class="btn-text">Обратный звонок</span></div>
+            </div>
+            <div class="footer-column">
+              <nav class="footer-nav">
+                <ul>
+                  <li><a href="#">Магазин</a></li>
+                  <li><a href="#">Доставка и оплата</a></li>
+                  <li><a href="#">Блог</a></li>
+                  <li><a href="#">Контакты</a></li>
+                  <li><a class="active" href="#">Часто задаваемые вопросы</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="footer-promo">
+              <p>Обращаем Ваше внимание на то, что данный Интернет сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 Гражданского кодекса Российской Федерации. Информация, представленная на сайте, ни при каких условиях не должна рассматриваться как предложение, сделанное Продавцом какому-либо лицу. Продавец оставляет за собой право в любое время изменить данную информацию без предварительного уведомления.</p>
+            </div>
+            <div class="to-top"><img src="images/arrow-white.png" alt="to top"></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/libs.js"></script>
+    <script src="js/scripts.min.js"></script>
+  </body>
+</html>
