@@ -1,3 +1,494 @@
 .catalog {
 
+  &-filter {
+    padding: 30px;
+    background: #f4f4f4;
+    max-width: 270px;
+
+    &-title {
+      margin: 0 0 20px;
+      font-family: $font-title;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: left;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        max-width: 210px;
+        height: 1px;
+        margin: 10px 0 0;
+        background: url(../images/categories-decor-medium.png) no-repeat;
+      }
+
+    }
+
+    &-block {
+      padding: 0 0 25px;
+    }
+
+    &-cost {
+      width: 100%;
+      height: 2px;
+      margin: 30px 0;
+      border: none;
+
+      &-fields {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 14px;
+          height: 2px;
+          background: #a9a9a9;
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+        }
+
+        label {
+          width: 80px;
+          margin: 0;
+
+          input {
+            text-align: center;
+            color: #6d6d6d;
+          }
+
+          &:first-of-type {
+            margin: 0 50px 0 0;
+          }
+
+        }
+
+      }
+
+      .noUi-base {
+        height: 3px;
+        background: #dbdbdb;
+        z-index: initial;
+      }
+
+      .noUi-handle {
+        width: 14px;
+        height: 14px;
+        background-size: cover;
+        box-shadow: none;
+        border-radius: 50%;
+        border: 3px solid $color-blue-text;
+        top: -6px;
+        right: -6px!important;
+
+        &:after,
+        &:before {
+          display: none;
+        }
+
+      }
+
+      .noUi-connect {
+        background: $color-blue-text;
+      }
+
+      &-label {
+        width: 95px;
+      }
+
+    }
+
+    .custom-checkbox,
+    .custom-radio {
+
+      input + label {
+        align-items: center;
+        margin: 15px 0 0;
+      }
+
+    }
+
+    .chooser {
+      width: 100%;
+      background: $color-white;
+    }
+
+    .btn {
+      width: 100%;
+      margin: 0 0 10px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+
+    }
+
+    @include more-768 {
+      max-width: 400px;
+    }
+
+  }
+
+  &-burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 40px);
+    margin: -21px -20px 20px;
+    padding: 16px;
+    background: #f9fafa;
+    @include shadow;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 700;
+    color: $color-blue-text;
+
+    img {
+      width: 28px;
+      margin: 0 10px 0 0;
+    }
+
+    @include more-768 {
+      width: calc(100% + 60px);
+      margin: -21px -30px 20px;
+    }
+
+  }
+
+  &-brands {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  &-content {
+
+    h1 + .catalog-promo {
+      width: calc(100% + 40px);
+      margin: 0 -20px 20px;
+      padding: 0 20px 20px;
+      border-bottom: 1px solid #e5e8e8;
+    }
+
+    .page-header {
+      width: calc(100% + 40px);
+      margin: 20px -20px 0;
+      padding: 20px 0 0;
+      border-top: 1px solid #e5e8e8;
+
+      .chooser {
+        display: flex;
+        width: 280px;
+        margin: 0 auto;
+      }
+
+      .filter-pags {
+        max-width: 320px;
+        justify-content: space-between;
+        padding: 20px 10px;
+      }
+
+    }
+
+  }
+
+  .product-card {
+    max-width: 300px;
+    border: none;
+    margin: 0 auto 25px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+  }
+
+  .pagination {
+    border: none;
+  }
+
+  &-articles {
+    margin: 25px 0 0;
+
+    &-title {
+      padding: 15px 30px;
+      background: #f4f4f4;
+      border-radius: $br $br 0 0;
+      text-align: left;
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    &-list {
+      margin: 0 0 30px;
+      padding: 30px 30px 25px;
+      border: 1px solid #e5e8e8;
+      border-top: none;
+      border-radius: 0 0 $br $br;
+    }
+
+    &-item {
+      margin: 0 0 25px;
+      padding: 0 0 25px;
+      background: url(../images/categories-decor-medium.png) no-repeat left bottom;
+
+      h3 {
+        text-align: left;
+        font-size: 17px;
+        line-height: 24px;
+        font-weight: 600;
+
+        a {
+          color: $color-blue-text;
+        }
+
+      }
+
+      p {
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+    }
+
+    &-link {
+      text-transform: uppercase;
+      color: $color-black;
+      font-weight: 600;
+
+      @include more-1200 {
+
+        &:hover {
+          text-decoration: none;
+        }
+
+      }
+
+    }
+
+  }
+
+  &-banner {
+    max-width: 270px;
+    margin: 30px auto;
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+  @include more-768 {
+
+    &-brands {
+      width: 100%;
+      padding: 0;
+      border: none;
+
+      .chooser-value {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        position: static;
+        list-style: none;
+
+        li {
+          width: 200px;
+          margin: 7px 0;
+          padding: 0 30px;
+          font-size: 16px;
+          line-height: 20px;
+          position: relative;
+
+          &:before {
+            content: '';
+            width: 13px;
+            height: 12px;
+            border-radius: 0 6px 6px 6px;
+            background: $color-green-text;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+          }
+
+          a {
+            color: $color-blue-text;
+            font-weight: 600;
+          }
+
+        }
+
+      }
+
+    }
+
+    .page-header {
+      width: calc(100% + 60px);
+      margin: 20px -30px 0;
+      padding: 30px 30px 20px;
+
+      .chooser {
+        width: auto;
+        margin: 0;
+      }
+
+      .filter-pags {
+        padding: 0;
+      }
+
+    }
+
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      align-content: flex-start;
+      flex-wrap: wrap;
+
+      .product-card {
+        width: 275px;
+        margin: 20px;
+
+        &:last-of-type {
+          margin: 20px;
+        }
+
+      }
+
+    }
+
+    &-articles {
+
+      &-item {
+        background: url(../images/categories-decor-large.png) no-repeat left bottom;
+      }
+
+    }
+
+  }
+
+  @include more-1200 {
+    display: flex;
+
+    &-aside {
+      width: 270px;
+      flex-shrink: 0;
+      margin: 0 30px 0 0;
+    }
+
+    &-content {
+      flex-grow: 1;
+
+      h1 + .catalog-promo {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+      }
+
+    }
+
+    &-filter {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 20px 30px;
+      flex-shrink: 0;
+      box-shadow: none;
+      border-right: 1px solid #e5e5e5;
+
+      &-title {
+
+        &:after {
+
+        }
+
+      }
+
+    }
+
+    &-burger {
+      display: none;
+    }
+
+    &-brands {
+      margin: 20px 0 30px;
+      padding: 20px 0;
+      border-top: 1px solid #e5e8e8;
+      border-bottom: 1px solid #e5e8e8;
+      border-radius: 0;
+
+      ul {
+
+        &:after {
+          display: none;
+        }
+
+      }
+
+    }
+
+    .page-header {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border-top: none;
+    }
+
+    &-list {
+      padding: 20px 0 0;
+      justify-content: space-between;
+
+      .product-card {
+        margin: 15px 0;
+
+        &:last-of-type {
+          margin: 15px 0;
+        }
+
+      }
+
+    }
+
+    .pagination {
+      padding: 20px 0;
+    }
+
+    &-articles {
+
+      &-list {
+        padding: 0 30px 20px;
+      }
+
+      &-item {
+        margin: 0 0 20px;
+        padding: 0 0 20px;
+        background: url(../images/categories-decor-medium.png) no-repeat left bottom;
+
+        &:first-of-type {
+          margin: 20px 0;
+        }
+
+      }
+
+    }
+
+  }
+
 }

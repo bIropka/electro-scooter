@@ -28,6 +28,24 @@
     border: 1px solid $color-white;
     border-radius: $br;
     background: #f4f4f4;
+    position: relative;
+
+    &-type {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 0 25px 25px 25px;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+
+      img {
+        width: 28px;
+      }
+
+    }
 
     &-image {
       display: block;
@@ -155,6 +173,7 @@
 
         &:last-of-type {
           align-items: flex-end;
+          text-align: right;
 
           .product-card-order-icon {
             margin: 0 -10px 0 0;

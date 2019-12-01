@@ -1,0 +1,58 @@
+.modal(data-modal="filter")
+  form.catalog-filter.modal-inner
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Цена (рубли)
+      #filter-cost.catalog-filter-cost
+      .catalog-filter-cost-fields
+        label
+          input#filter-cost-from(type="text")
+        label
+          input#filter-cost-to(type="text")
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Диаметр колес (дюймы)
+      .custom-checkbox
+        input(type="checkbox" id="filter-checkbox-1")
+        label(for="filter-checkbox-1")
+          span
+            != '8'
+      .custom-checkbox
+        input(type="checkbox" id="filter-checkbox-2")
+        label(for="filter-checkbox-2")
+          span
+            != '9'
+      .custom-checkbox
+        input(type="checkbox" id="filter-checkbox-3")
+        label(for="filter-checkbox-3")
+          span
+            != '10'
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Производитель
+      .chooser
+        .chooser-value Выберите бренд
+        ul
+          li бренд
+          li по стоимости
+          li по дате добавления
+          li по цвету
+          li китайский
+        input(type="hidden")
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Наличие
+      .custom-radio
+        input(type="radio" name="filter-radio" id="filter-radio-1")
+        label(for="filter-radio-1")
+          span.custom-radio-value
+            != 'Все товары'
+      .custom-radio
+        input(type="radio" name="filter-radio" id="filter-radio-2")
+        label(for="filter-radio-2")
+          span.custom-radio-value
+            != 'Товары в наличии'
+    fieldset.catalog-filter-block
+      h3.catalog-filter-title Артикул
+      label.field-label
+        input(type="text").field-input
+    button(type="submit").btn
+      span.btn-text Показать результаты
+    button(type="reset").btn.btn-grey
+      span.btn-text Сбросить фильтры

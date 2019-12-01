@@ -1,6 +1,7 @@
 $(function () {
 
   const wrapper = $('.wrapper');
+  const body = $('body');
   const headerBottom = $('.header-bottom .wrapper-inner');
   const headerNav = $('.header-nav');
   const headerContacts = $('.header .contacts');
@@ -66,9 +67,22 @@ $(function () {
     $(this).parents('.header').toggleClass('menu-opened');
   });
 
-  $('.catalog-burger').on('click', function () {
-    $(this).toggleClass('active');
-    $(this).siblings('.catalog-filter').toggleClass('active');
+  $('[data-call-modal]').on('click', function () {
+    const target = $(this).attr('data-call-modal');
+    const scrollValue = $(window).scrollTop();
+    body.addClass('modal-opened');
+    $(`[data-modal="${target}"]`).fadeIn(300).css({
+      'display': 'flex',
+      'top': `${scrollValue}px`
+    });
+  });
+
+  $('.modal').on('click', function (event) {
+    const target = $(event.target);
+    if (target.hasClass('modal-close') || !target.closest('.modal-inner').length) {
+      $(this).fadeOut(300);
+      body.removeClass('modal-opened');
+    }
   });
 
   $('[data-select-control]').on('click', function () {
@@ -82,14 +96,11 @@ $(function () {
 
   $('[data-select] ul li').on('click', function () {
     if (!$(this).hasClass('active')) {
-      const value = $(this).html();
-      const valueText = ($(this).find('.color-item').length)
-        ? $(this).find('.color-item-name').text()
-        : $(this).text();
+      const value = $(this).text();
       $(this).addClass('active');
       $(this).siblings('.active').removeClass('active');
-      $(this).parents('[data-select]').find('[data-select-control]').html(value);
-      $(this).parents('[data-select]').find('input').val(valueText);
+      $(this).parents('ul').siblings('[data-select-control]').text(value);
+      $(this).parents('ul').siblings('input').val(value);
       $(this).parents('[data-select]').removeClass('active');
     }
   });
@@ -115,7 +126,11 @@ $(function () {
   });
 
   chooser.find('.chooser-value').on('click', function () {
-    $(this).parents('.chooser').toggleClass('active');
+    if ($(this).closest('.catalog-brands').length && $(window).width() > 767) {
+      return false;
+    } else {
+      $(this).parents('.chooser').toggleClass('active');
+    }
   });
 
   chooser.find('ul li').on('click', function () {
@@ -123,7 +138,8 @@ $(function () {
       const value = $(this).text();
       $(this).siblings().removeClass('active');
       $(this).addClass('active');
-      $(this).parents('.chooser').find('.chooser-value').text(value);
+      $(this).parents('ul').siblings('.chooser-value').text(value);
+      $(this).parents('ul').siblings('input').val(value);
       $(this).parents('.chooser').removeClass('active');
     }
   });
