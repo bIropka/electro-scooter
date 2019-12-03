@@ -953,6 +953,7 @@ button:focus,
   display: inline-flex;
   align-items: center;
   padding: 7px 40px 7px 25px;
+  background: $color-white;
   border: 2px solid #e5e8e8;
   border-radius: 20px;
   position: relative;
@@ -1622,6 +1623,22 @@ time.date {
 
 .color-brown {
   background-color: #9b5f09;
+}
+
+.color-blue {
+  background-color: #3dadbe;
+}
+
+.color-rose {
+  background-color: #c44078;
+}
+
+.color-grey {
+  background-color: #c7c0ca;
+}
+
+.color-yellow {
+  background-color: #deb22d;
 }
 
 .m-0 {
