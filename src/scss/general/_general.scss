@@ -856,10 +856,8 @@ button:focus,
 
   @include more-1200 {
 
-    &.slick-prev:hover {
-    }
-
-    &.slick-next:hover {
+    &:hover:before {
+      color: #5f6c72;
     }
 
   }
@@ -1643,4 +1641,8 @@ time.date {
 
 .m-0 {
   margin: 0!important;
+}
+
+.mb-0 {
+  margin-bottom: 0!important;
 }
