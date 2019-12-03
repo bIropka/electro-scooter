@@ -7,12 +7,12 @@ form.order-form
     .order-form-field-wrapper
       label.order-form-label(for="order-name") Имя *
       input(type="text" id="order-name" placeholder="Степан")
-      span.order-form-field-validation
+      span.order-form-field-validation.filled
         i.fa.fa-check
     .order-form-field-wrapper
       label.order-form-label(for="order-lastname") Фамилия *
       input(type="text" id="order-lastname" placeholder="Иванов")
-      span.order-form-field-validation
+      span.order-form-field-validation.filled
         i.fa.fa-check
     .order-form-field-wrapper
       label.order-form-label(for="order-phone") Телефон
@@ -21,7 +21,7 @@ form.order-form
         i.fa.fa-check
     .order-form-field-wrapper
       label.order-form-label(for="order-email") E-mail *
-      input(type="text" id="order-email" placeholder="")
+      input(type="text" id="order-email" placeholder="stepan@ivanov.ru" class="field-error" value="fhj577")
       span.order-form-field-validation
         i.fa.fa-check
       span.order-form-field-error Некорректный адрес e-mail!
@@ -40,7 +40,7 @@ form.order-form
           li по цвету
           li китайский
         input(type="hidden" value="Россия")
-      span.order-form-field-validation
+      span.order-form-field-validation.filled
         i.fa.fa-check
     .order-form-field-wrapper
       .order-form-label Область *
@@ -53,7 +53,7 @@ form.order-form
           li по цвету
           li китайский
         input(type="hidden" value="Московская")
-      span.order-form-field-validation
+      span.order-form-field-validation.filled
         i.fa.fa-check
     .order-form-field-wrapper
       .order-form-label Район *
@@ -66,7 +66,7 @@ form.order-form
           li по цвету
           li китайский
         input(type="hidden" value="Химкинский")
-      span.order-form-field-validation
+      span.order-form-field-validation.filled
         i.fa.fa-check
     .order-form-field-wrapper
       .order-form-label Город *
@@ -79,12 +79,12 @@ form.order-form
           li по цвету
           li китайский
         input(type="hidden" value="Химки")
-      span.order-form-field-validation
+      span.order-form-field-validation.filled
         i.fa.fa-check
     .order-form-field-wrapper.full-width
       label.order-form-label(for="order-address") Адрес *
       input(type="text" id="order-address" placeholder="ул. Вторая Советская, д. 95, кв. 757")
-      span.order-form-field-validation
+      span.order-form-field-validation.filled
         i.fa.fa-check
   .order-form-fieldset
     .order-form-fieldset-header
@@ -107,7 +107,7 @@ form.order-form
         span.custom-radio-value Яндекс.Деньги/Visa/Mastercard
   .order-form-fieldset
     .order-form-fieldset-header
-      h3 Способ оплаты
+      h3 Способ доставки
     .custom-radio
       input(type="radio" name="order-radio-delivery" id="order-radio-delivery-1")
       label(for="order-radio-delivery-1")
@@ -126,8 +126,7 @@ form.order-form
         span.custom-radio-value Почта России
   .order-form-fieldset
     .order-form-fieldset-header
-      h3 Персональные данные
-      span * поля, обязательные для заполнения
+      h3 Комментарий к заказу
     textarea(placeholder="Просьба курьеру позвонить перед доставкой.")
   .order-form-footer
     button(type="submit").btn

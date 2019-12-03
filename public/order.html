@@ -82,9 +82,9 @@
       </div>
       <main>
         <div class="wrapper-inner">
-          <div class="catalog">
+          <div class="order">
             <div class="order-aside">
-              <div class="order-burger" data-call-modal="filter"><span>Посмотреть состав заказа</span></div>
+              <div class="order-burger" data-call-modal="order"><span>Посмотреть состав заказа</span></div>
             </div>
             <form class="order-form">
               <h1>Оформление заказа</h1>
@@ -94,11 +94,11 @@
                 </div>
                 <div class="order-form-field-wrapper">
                   <label class="order-form-label" for="order-name">Имя *</label>
-                  <input type="text" id="order-name" placeholder="Степан"><span class="order-form-field-validation"><i class="fa fa-check"></i></span>
+                  <input type="text" id="order-name" placeholder="Степан"><span class="order-form-field-validation filled"><i class="fa fa-check"></i></span>
                 </div>
                 <div class="order-form-field-wrapper">
                   <label class="order-form-label" for="order-lastname">Фамилия *</label>
-                  <input type="text" id="order-lastname" placeholder="Иванов"><span class="order-form-field-validation"><i class="fa fa-check"></i></span>
+                  <input type="text" id="order-lastname" placeholder="Иванов"><span class="order-form-field-validation filled"><i class="fa fa-check"></i></span>
                 </div>
                 <div class="order-form-field-wrapper">
                   <label class="order-form-label" for="order-phone">Телефон</label>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="order-form-field-wrapper">
                   <label class="order-form-label" for="order-email">E-mail *</label>
-                  <input type="text" id="order-email" placeholder=""><span class="order-form-field-validation"><i class="fa fa-check"></i></span><span class="order-form-field-error">Некорректный адрес e-mail!</span>
+                  <input class="field-error" type="text" id="order-email" placeholder="stepan@ivanov.ru" value="fhj577"><span class="order-form-field-validation"><i class="fa fa-check"></i></span><span class="order-form-field-error">Некорректный адрес e-mail!</span>
                 </div>
               </div>
               <div class="order-form-fieldset">
@@ -125,7 +125,7 @@
                       <li>китайский</li>
                     </ul>
                     <input type="hidden" value="Россия">
-                  </div><span class="order-form-field-validation"><i class="fa fa-check"></i></span>
+                  </div><span class="order-form-field-validation filled"><i class="fa fa-check"></i></span>
                 </div>
                 <div class="order-form-field-wrapper">
                   <div class="order-form-label">Область *</div>
@@ -139,7 +139,7 @@
                       <li>китайский</li>
                     </ul>
                     <input type="hidden" value="Московская">
-                  </div><span class="order-form-field-validation"><i class="fa fa-check"></i></span>
+                  </div><span class="order-form-field-validation filled"><i class="fa fa-check"></i></span>
                 </div>
                 <div class="order-form-field-wrapper">
                   <div class="order-form-label">Район *</div>
@@ -153,7 +153,7 @@
                       <li>китайский</li>
                     </ul>
                     <input type="hidden" value="Химкинский">
-                  </div><span class="order-form-field-validation"><i class="fa fa-check"></i></span>
+                  </div><span class="order-form-field-validation filled"><i class="fa fa-check"></i></span>
                 </div>
                 <div class="order-form-field-wrapper">
                   <div class="order-form-label">Город *</div>
@@ -167,11 +167,11 @@
                       <li>китайский</li>
                     </ul>
                     <input type="hidden" value="Химки">
-                  </div><span class="order-form-field-validation"><i class="fa fa-check"></i></span>
+                  </div><span class="order-form-field-validation filled"><i class="fa fa-check"></i></span>
                 </div>
                 <div class="order-form-field-wrapper full-width">
                   <label class="order-form-label" for="order-address">Адрес *</label>
-                  <input type="text" id="order-address" placeholder="ул. Вторая Советская, д. 95, кв. 757"><span class="order-form-field-validation"><i class="fa fa-check"></i></span>
+                  <input type="text" id="order-address" placeholder="ул. Вторая Советская, д. 95, кв. 757"><span class="order-form-field-validation filled"><i class="fa fa-check"></i></span>
                 </div>
               </div>
               <div class="order-form-fieldset">
@@ -197,7 +197,7 @@
               </div>
               <div class="order-form-fieldset">
                 <div class="order-form-fieldset-header">
-                  <h3>Способ оплаты</h3>
+                  <h3>Способ доставки</h3>
                 </div>
                 <div class="custom-radio">
                   <input type="radio" name="order-radio-delivery" id="order-radio-delivery-1">
@@ -218,7 +218,7 @@
               </div>
               <div class="order-form-fieldset">
                 <div class="order-form-fieldset-header">
-                  <h3>Персональные данные</h3><span>* поля, обязательные для заполнения</span>
+                  <h3>Комментарий к заказу</h3>
                 </div>
                 <textarea placeholder="Просьба курьеру позвонить перед доставкой."></textarea>
               </div>
@@ -230,7 +230,7 @@
         </div>
         <div class="modal" data-modal="order">
           <div class="order-list modal-inner">
-            <div class="order-list-title"></div>
+            <div class="order-list-title">Ваш заказ</div>
             <div class="order-list-item">
               <div class="order-list-item-image"><img src="images/product-1.jpg" alt="product"></div>
               <h3><a href="#">Электромотоцикл RiverToys A001AA</a></h3>

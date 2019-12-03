@@ -1,3 +1,418 @@
 .order {
 
+  &-burger {
+    width: calc(100% + 40px);
+    margin: -21px -20px 20px;
+    padding: 17px 20px;
+    background: #f4f4f4;
+    text-align: center;
+    font-size: 15px;
+    line-height: 22px;
+    color: $color-blue;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &-list {
+    max-width: 270px;
+    padding: 30px 20px;
+    background: #f4f4f4;
+
+    &-title {
+      margin: 0 0 20px;
+      font-family: $font-title;
+      font-size: 20px;
+      line-height: 23px;
+      font-weight: 700;
+      text-align: center;
+      color: #3c3c3c;
+    }
+
+    &-item {
+
+      &-image {
+        width: 160px;
+        margin: 0 auto;
+        border: 1px solid #e5e8e8;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: 235px;
+        height: 1px;
+        margin: 30px auto;
+        background: url(../images/order-aside-decor.png);
+      }
+
+      .order-list-title + & {
+
+        &:before {
+          content: '';
+          display: block;
+          width: 235px;
+          height: 1px;
+          margin: 0 auto 30px;
+          background: url(../images/order-aside-decor.png);
+        }
+
+      }
+
+      h3 {
+        margin: 20px 0 10px;
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 600;
+        text-align: center;
+
+        a {
+          color: $color-blue-text;
+        }
+
+      }
+
+      &-cost {
+        font-family: $font-title;
+        font-size: 20px;
+        line-height: 23px;
+        font-weight: 700;
+        text-align: center;
+        color: #3c3c3c;
+
+        span {
+          color: #747c7e;
+        }
+
+      }
+
+    }
+
+    &-result {
+      list-style: none;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
+
+        span:first-of-type {
+          text-transform: uppercase;
+        }
+
+      }
+
+    }
+
+  }
+
+  &-form {
+
+    &-fieldset {
+      padding: 0 0 25px;
+
+      &-header {
+        margin: 0 0 20px;
+
+        h3 {
+          margin: 0 0 10px;
+          font-family: $font-title;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-align: left;
+
+          &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            max-width: 270px;
+            height: 1px;
+            margin: 10px 0 0;
+            background: url(../images/categories-decor-medium.png) no-repeat;
+            background-size: 100% auto;
+          }
+
+        }
+
+        span {
+          display: block;
+          padding: 0 0 0 10px;
+          font-size: 14px;
+          line-height: 22px;
+          color: #3c3c3c;;
+        }
+
+      }
+
+    }
+
+    &-label {
+      display: block;
+      padding: 0 30px 10px 0;
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    &-field {
+
+      &-wrapper {
+        margin: 0 0 25px;
+        position: relative;
+
+        &:last-of-type {
+          margin: 0;
+        }
+
+        .chooser {
+          width: 100%;
+          padding: 12px 40px 12px 25px;
+          border-radius: $br;
+          border: none;
+          @include shadow;
+        }
+
+      }
+
+      &-validation {
+        position: absolute;
+        right: 0;
+        top: -5px;
+
+        i {
+          font-size: 14px;
+          color: #bac5c7;
+        }
+
+        &.filled i {
+          color: $color-green-text;
+        }
+
+      }
+
+      &-error {
+        display: block;
+        padding: 10px 20px 0;
+        font-size: 14px;
+        line-height: 22px;
+        color: #d21515;
+        font-weight: 600;
+      }
+
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      height: 46px;
+      padding: 0 20px;
+      @include shadow;
+      border: none;
+      border-radius: $br;
+      line-height: 46px;
+
+      &.field-error {
+        box-shadow: none;
+        border: 1px solid #d21515;
+      }
+
+    }
+
+    textarea {
+      height: 130px;
+      resize: none;
+      padding: 10px 20px;
+      line-height: 22px;
+    }
+
+    .custom-radio {
+      margin: 0 0 15px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+
+      input[type=radio]+label {
+        align-items: center;
+      }
+
+    }
+
+    .btn {
+      margin: 0 auto 20px;
+    }
+
+    a.btn {
+      margin: 0 auto;
+    }
+
+  }
+
+  @include more-768 {
+
+    &-form {
+
+      &-fieldset {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+
+        &-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 0 0 10px;
+          position: relative;
+
+          h3 {
+            margin: 0;
+
+            &:after {
+              max-width: none;
+              background: url(../images/categories-decor-large.png) no-repeat;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+            }
+
+          }
+
+        }
+
+      }
+
+      &-field {
+
+        &-wrapper {
+          width: 330px;
+          margin: 25px 40px 0 0;
+          flex-shrink: 0;
+
+          &:last-of-type,
+          &:nth-of-type(2n + 1) {
+            margin: 25px 0 0;
+          }
+
+          .order-form &:nth-of-type(2),
+          .order-form &:nth-of-type(3) {
+            margin-top: 0;
+          }
+
+          &.full-width {
+            width: 700px;
+            margin: 12px 0;
+          }
+
+        }
+
+      }
+
+      .custom-radio {
+        margin: 0 25px 15px 0;
+      }
+
+      &-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn,
+        a.btn {
+          margin: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+  @include more-992 {
+
+    &-form {
+
+      &-field {
+
+        &-wrapper {
+          margin: 12px 70px 12px 0;
+
+          &:last-of-type,
+          &:nth-of-type(2n + 1) {
+            margin: 12px 70px 12px 0;
+          }
+
+          &.full-width {
+            width: 730px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include more-1200 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    h1 {
+      width: 100% ;
+    }
+
+    &-burger {
+      display: none;
+    }
+
+    &-aside {
+      width: 270px;
+      order: 1;
+    }
+
+    &-form {
+      width: calc(100% - 300px);
+      order: 0;
+
+      &-fieldset {
+        margin: 0 0 30px;
+        padding: 20px 30px;
+        border: 1px solid #e5e8e8;
+        border-radius: $br;
+
+        &-header {
+
+          h3 {
+
+            &:after {
+              background: url(../images/categories-decor-huge.png) no-repeat;
+            }
+
+          }
+
+        }
+
+      }
+
+      &-field {
+
+        &-validation {
+          right: -30px;
+          top: 40px;
+        }
+
+      }
+
+    }
+
+  }
+
 }

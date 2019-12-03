@@ -132,7 +132,12 @@ $(function () {
       && $(window).width() > 767) {
       return false;
     } else {
-      $(this).parents('.chooser').toggleClass('active');
+      if ($(this).parents('.chooser').hasClass('active')) {
+        $(this).parents('.chooser').removeClass('active');
+      } else {
+        chooser.removeClass('active');
+        $(this).parents('.chooser').addClass('active');
+      }
     }
   });
 
