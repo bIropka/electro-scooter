@@ -1,10 +1,13 @@
 article {
 
   h1,
-  h2,
+  h2 {
+    margin: 0 0 15px;
+  }
+
   h3,
   h4 {
-    margin: 0 0 15px;
+    margin: 0 0 10px;
   }
 
   .article-image {
@@ -19,9 +22,14 @@ article {
 
   }
 
+  p {
+    margin: 0 0 20px;
+  }
+
   ul,
   ol {
     margin: 20px 0;
+    padding: 0 0 0 20px;
     list-style: none;
 
     li {
@@ -110,6 +118,7 @@ article {
 
     table {
       min-width: 1000px;
+      margin: 0 0 20px;
       border-collapse: collapse;
       text-align: left;
 
