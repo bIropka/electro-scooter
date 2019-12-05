@@ -1,107 +1,97 @@
 .order {
 
-  &-burger {
-    width: calc(100% + 40px);
-    margin: -21px -20px 20px;
-    padding: 17px 20px;
-    background: #f4f4f4;
-    text-align: center;
-    font-size: 15px;
-    line-height: 22px;
-    color: $color-blue;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
+  &-table {
 
-  &-list {
-    max-width: 270px;
-    padding: 30px 20px;
-    background: #f4f4f4;
+    &-image {
+      width: 100px;
+      border: 1px solid #e5e8e8;
+    }
 
-    &-title {
-      margin: 0 0 20px;
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 25px;
+      font-weight: 600;
+      text-align: left;
+
+      a {
+        color: $color-blue-text;
+      }
+
+    }
+
+    &-cost {
       font-family: $font-title;
       font-size: 20px;
       line-height: 23px;
       font-weight: 700;
-      text-align: center;
       color: #3c3c3c;
+
+      span {
+        color: #747c7e;
+      }
+
     }
 
-    &-item {
+    .color-text,
+    .color-list {
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-      &-image {
-        width: 160px;
-        margin: 0 auto;
-        border: 1px solid #e5e8e8;
-      }
+    .color-text {
+      margin: 0 10px 0 0;
+    }
 
-      &:after {
-        content: '';
-        display: block;
-        width: 235px;
-        height: 1px;
-        margin: 30px auto;
-        background: url(../images/order-aside-decor.png);
-      }
+    .cart-card-present {
+      padding: 0;
+      margin: 10px 0 0;
+    }
 
-      .order-list-title + & {
+  }
 
-        &:before {
-          content: '';
-          display: block;
-          width: 235px;
-          height: 1px;
-          margin: 0 auto 30px;
-          background: url(../images/order-aside-decor.png);
+  .order-table {
+    max-width: 870px;
+
+    table {
+      min-width: 870px;
+
+      td {
+        padding: 10px;
+        vertical-align: top;
+        text-align: left;
+
+        &:nth-of-type(3) {
+          width: 300px;
         }
 
       }
 
-      h3 {
-        margin: 20px 0 10px;
-        font-size: 18px;
-        line-height: 25px;
-        font-weight: 600;
-        text-align: center;
-
-        a {
-          color: $color-blue-text;
-        }
-
-      }
-
-      &-cost {
+      th {
         font-family: $font-title;
         font-size: 20px;
         line-height: 23px;
         font-weight: 700;
-        text-align: center;
-        color: #3c3c3c;
-
-        span {
-          color: #747c7e;
-        }
-
       }
 
     }
 
-    &-result {
-      list-style: none;
+  }
 
-      li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 600;
+  &-result {
+    list-style: none;
 
-        span:first-of-type {
-          text-transform: uppercase;
-        }
+    li {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 600;
 
+      span:first-of-type {
+        width: 100px;
+        text-transform: uppercase;
       }
 
     }
@@ -255,6 +245,7 @@
   @include more-768 {
 
     &-form {
+      max-width: 870px;
 
       &-fieldset {
         display: flex;
@@ -369,18 +360,7 @@
       width: 100% ;
     }
 
-    &-burger {
-      display: none;
-    }
-
-    &-aside {
-      width: 270px;
-      order: 1;
-    }
-
     &-form {
-      width: calc(100% - 300px);
-      order: 0;
 
       &-fieldset {
         margin: 0 0 30px;

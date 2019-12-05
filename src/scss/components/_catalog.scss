@@ -7,7 +7,6 @@
 
     &-title {
       margin: 0 0 20px;
-      font-family: $font-title;
       font-size: 14px;
       line-height: 22px;
       font-weight: 600;
@@ -165,6 +164,7 @@
   }
 
   &-brands {
+    display: flex;
     width: 280px;
     margin: 0 auto;
   }
@@ -192,6 +192,7 @@
 
       .filter-pags {
         max-width: 320px;
+        margin: 0 auto;
         justify-content: space-between;
         padding: 20px 10px;
       }
@@ -206,7 +207,7 @@
     margin: 0 auto 25px;
 
     &:last-of-type {
-      margin: 0;
+      margin: 0 auto;
     }
 
   }
@@ -351,6 +352,7 @@
       }
 
       .filter-pags {
+        margin: 0;
         padding: 0;
       }
 

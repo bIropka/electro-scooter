@@ -960,6 +960,16 @@
     &-image {
       width: 650px;
       margin: 0;
+
+      &-small {
+
+        .slick-slide {
+          height: 110px;
+          padding: 10px;
+        }
+
+      }
+
     }
 
     &-form {
@@ -992,6 +1002,10 @@
 
       .chooser {
         margin: 10px 0 0;
+      }
+
+      .custom-checkbox:last-of-type {
+        margin: 8px 0;
       }
 
     }

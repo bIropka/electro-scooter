@@ -14,6 +14,8 @@ $(function () {
 
   catalogRepaint();
 
+  setChooserColors();
+
   if (filterCost) {
     noUiSlider.create(filterCost, {
       start: [1000, 5000],
@@ -70,6 +72,12 @@ $(function () {
     catalogFilter.prependTo(catalogAside);
     catalogArticles.appendTo(catalogAside);
     catalogBanner.appendTo(catalogAside);
+  }
+
+  function setChooserColors () {
+    $('.chooser-color li').each(function () {
+      $(this).attr('data-background', $(this).find('span').eq(0).css('background-color'));
+    });
   }
 
 });

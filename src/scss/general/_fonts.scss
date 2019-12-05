@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap');
 
 @font-face {
-  font-family: 'Geometria Bold', sans-serif;
-  src: url(../fonts/Geometria-Bold.ttf) format('truetype');
+  font-family: 'Geometria';
+  src: url('../fonts/Geometria-Bold.eot');
+  src: url('../fonts/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Geometria-Bold.woff') format('woff'),
+  url('../fonts/Geometria-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
   font-display: swap;
 }

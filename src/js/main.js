@@ -13,12 +13,15 @@ $(function () {
   const footerSocial = $('.footer-social');
   const chooser = $('.chooser');
   const chooserColor = $('.chooser.chooser-color');
+  const colorItem = $('.color-list li');
 
   setTimeout(function () {
     wrapper.animate({opacity: 1}, 500);
   }, 500);
 
   pageRepaint();
+
+  setColors();
 
   $(window).on('resize', function () {
     pageRepaint();
@@ -126,6 +129,13 @@ $(function () {
     costDOM.text(amount * itemCost + ' руб.');
   });
 
+  colorItem.on('click', function () {
+    if (!$(this).hasClass('active')) {
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+    }
+  });
+
   chooser.find('.chooser-value').on('click', function () {
     if ($(this).closest('.catalog-brands').length
       || $(this).closest('.chooser-color').length
@@ -165,6 +175,10 @@ $(function () {
       const value = $(this).find('.chooser-color-text').text();
       $(this).parents('ul').siblings('input').val(value);
     }
+  });
+
+  $('.to-top').on('click', function () {
+    $('html, body').animate({scrollTop: 0}, 600);
   });
 
   $(document).on('click', function (event) {
@@ -219,6 +233,12 @@ $(function () {
 
   function renderDesktopFooter() {
       footerSubscribe.insertBefore(footerSocial);
+  }
+
+  function setColors () {
+    colorItem.each(function () {
+      $(this).attr('data-background', $(this).css('background-color'));
+    });
   }
 
 });

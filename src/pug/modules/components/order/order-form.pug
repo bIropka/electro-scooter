@@ -1,5 +1,57 @@
+h1 Оформление заказа
+.article-table.order-table
+  table
+    tr
+      th(colspan="3") Ваш заказ
+    tr
+      td
+        .order-table-image
+          img(src="images/product-1.jpg" alt="product")
+      td
+        h3
+          a(href="#") Электромотоцикл RiverToys A001AA
+        .order-table-cost 12 550 руб. <span>× 1</span>
+      td
+        span.color-text Цвет:
+        ul.color-list
+          li.color-yellow.active
+        .cart-card-present Подарок: bluetooth-колонка
+    tr
+      td
+        .order-table-image
+          img(src="images/product-2.jpg" alt="product")
+      td
+        h3
+          a(href="#") Беговел Star One Scooter (Черно-Желтый)
+        .order-table-cost 7 000 руб. <span>× 2</span>
+      td
+        span.color-text Цвет:
+        ul.color-list
+          li.color-crimson.active
+        .cart-card-present Подарок: Шлем виртуальной реальности VRBox 2.0
+    tr
+      td
+        .order-table-image
+          img(src="images/product-3.jpg" alt="product")
+      td
+        h3
+          a(href="#") Беговел Star One Scooter (Черно-Желтый)
+        .order-table-cost 12 550 руб. <span>× 1</span>
+      td
+        span.color-text Цвет:
+        ul.color-list
+          li.color-red.active
+        .cart-card-present Подарок: Power Bank
+    tr
+      td(colspan="3")
+        ul.order-result
+          li
+            span.order-result-text Товаров
+            span.order-result-value 7
+          li
+            span.order-result-text На сумму
+            span.order-result-value 57 000 руб.
 form.order-form
-  h1 Оформление заказа
   .order-form-fieldset
     .order-form-fieldset-header
       h3 Персональные данные
@@ -25,6 +77,25 @@ form.order-form
       span.order-form-field-validation
         i.fa.fa-check
       span.order-form-field-error Некорректный адрес e-mail!
+  .order-form-fieldset
+    .order-form-fieldset-header
+      h3 Способ доставки
+    .custom-radio
+      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-1")
+      label(for="order-radio-delivery-1")
+        span.custom-radio-value Самовывоз
+    .custom-radio
+      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-2")
+      label(for="order-radio-delivery-2")
+        span.custom-radio-value Курьер
+    .custom-radio
+      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-3")
+      label(for="order-radio-delivery-3")
+        span.custom-radio-value Транспортная компания
+    .custom-radio
+      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-4")
+      label(for="order-radio-delivery-4")
+        span.custom-radio-value Почта России
   .order-form-fieldset
     .order-form-fieldset-header
       h3 Адрес доставки
@@ -105,25 +176,6 @@ form.order-form
       input(type="radio" name="order-radio-payment" id="order-radio-payment-4")
       label(for="order-radio-payment-4")
         span.custom-radio-value Яндекс.Деньги/Visa/Mastercard
-  .order-form-fieldset
-    .order-form-fieldset-header
-      h3 Способ доставки
-    .custom-radio
-      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-1")
-      label(for="order-radio-delivery-1")
-        span.custom-radio-value Самовывоз
-    .custom-radio
-      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-2")
-      label(for="order-radio-delivery-2")
-        span.custom-radio-value Курьер
-    .custom-radio
-      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-3")
-      label(for="order-radio-delivery-3")
-        span.custom-radio-value Транспортная компания
-    .custom-radio
-      input(type="radio" name="order-radio-delivery" id="order-radio-delivery-4")
-      label(for="order-radio-delivery-4")
-        span.custom-radio-value Почта России
   .order-form-fieldset
     .order-form-fieldset-header
       h3 Комментарий к заказу
