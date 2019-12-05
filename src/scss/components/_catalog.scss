@@ -12,17 +12,7 @@
       font-weight: 600;
       text-transform: uppercase;
       text-align: left;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        max-width: 210px;
-        height: 1px;
-        margin: 10px 0 0;
-        background: url(../images/categories-decor-medium.png) no-repeat;
-      }
-
+      @include dashed-transparency;
     }
 
     &-block {
@@ -240,8 +230,11 @@
 
     &-item {
       margin: 0 0 25px;
-      padding: 0 0 25px;
-      background: url(../images/categories-decor-medium.png) no-repeat left bottom;
+      @include dashed-transparency;
+
+      &:after {
+        margin: 20px 0 0;
+      }
 
       h3 {
         text-align: left;
@@ -377,14 +370,6 @@
 
     }
 
-    &-articles {
-
-      &-item {
-        background: url(../images/categories-decor-large.png) no-repeat left bottom;
-      }
-
-    }
-
   }
 
   @include more-1200 {
@@ -416,15 +401,6 @@
       flex-shrink: 0;
       box-shadow: none;
       border-right: 1px solid #e5e5e5;
-
-      &-title {
-
-        &:after {
-
-        }
-
-      }
-
     }
 
     &-burger {
@@ -482,11 +458,9 @@
 
       &-item {
         margin: 0 0 20px;
-        padding: 0 0 20px;
-        background: url(../images/categories-decor-medium.png) no-repeat left bottom;
 
         &:first-of-type {
-          padding: 20px 0;
+          padding: 20px 0 0;
         }
 
       }

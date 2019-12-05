@@ -30,7 +30,7 @@ gulp.task('markup', function() {
 
 gulp.task('styles', function () {
     return gulp.src('src/scss/main.scss')
-        .pipe(rename("styles.min.scss"))
+        .pipe(rename("styles.scss"))
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -55,7 +55,7 @@ gulp.task('scripts', function () {
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(concat('scripts.min.js'))
+        .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('public/js'))

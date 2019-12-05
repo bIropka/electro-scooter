@@ -38,7 +38,7 @@
     flex-grow: 1;
     position: relative;
 
-    &:after {
+    &:before {
       content: '\f105';
       display: block;
       height: 22px;
@@ -105,21 +105,18 @@
     }
 
     &-link {
-      position: static;
+      position: relative;
+      @include dashed-transparency;
 
-      &:after {
+      &:before {
         display: none;
       }
 
-      &:before {
-        content: '';
-        display: block;
-        height: 1px;
-        background: url(../images/categories-decor.png) no-repeat left top;
+      &:after {
+        margin: 0;
         position: absolute;
-        left: 56px;
-        right: 0;
-        top: calc(100% + 10px);
+        left: 0;
+        bottom: -10px;
       }
 
       &:hover {

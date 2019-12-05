@@ -74,10 +74,14 @@ $(function () {
   $('[data-call-modal]').on('click', function () {
     const target = $(this).attr('data-call-modal');
     const scrollValue = $(window).scrollTop();
+    const modal = $(`[data-modal="${target}"]`);
     body.addClass('modal-opened');
-    $(`[data-modal="${target}"]`).fadeIn(300).css({
+    modal.fadeIn(300).css({
       'display': 'flex',
       'top': `${scrollValue}px`
+    });
+    $(document).on('touchmove', function (event) {
+      event.preventDefault();
     });
   });
 
@@ -86,6 +90,7 @@ $(function () {
     if (target.hasClass('modal-close') || !target.closest('.modal-inner').length) {
       $(this).fadeOut(300);
       body.removeClass('modal-opened');
+      $(document).off('touchmove');
     }
   });
 
@@ -137,9 +142,9 @@ $(function () {
   });
 
   chooser.find('.chooser-value').on('click', function () {
-    if ($(this).closest('.catalog-brands').length
-      || $(this).closest('.chooser-color').length
-      && $(window).width() > 767) {
+    if ($(this).closest('.catalog-brands').length && $(window).width() > 767
+      || $(this).closest('.chooser-color').length && $(window).width() > 767) {
+      console.log('hello');
       return false;
     } else {
       if ($(this).parents('.chooser').hasClass('active')) {
@@ -152,7 +157,7 @@ $(function () {
   });
 
   chooser.find('ul li').on('click', function () {
-    if (!$(this).hasClass('active')) {
+    if (!$(this).hasClass('active') && $(this).closest('.catalog-brands').length === 0) {
       const value = $(this).html();
       $(this).siblings().removeClass('active');
       $(this).addClass('active');

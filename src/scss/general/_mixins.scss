@@ -112,3 +112,16 @@
 
 }
 
+@mixin dashed-transparency {
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 10px 0 0;
+    background: linear-gradient(to right, transparent 75%, $color-white), linear-gradient(to right, $color-black 1px, transparent 1px) repeat-x;
+    background-size: auto, 4px 1px;
+  }
+
+}

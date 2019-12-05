@@ -259,17 +259,7 @@
       font-weight: 600;
       text-transform: uppercase;
       text-align: left;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 1px;
-        margin: 10px 0 0;
-        background: url(../images/categories-decor-medium.png) no-repeat;
-        background-size: 280px auto;
-      }
-
+      @include dashed-transparency;
     }
 
     .custom-checkbox {
@@ -979,12 +969,6 @@
 
       &-title {
         margin: 10px 0;
-
-        &:after {
-          background: url(../images/categories-decor-large.png) no-repeat;
-          background-size: 100% auto;
-        }
-
       }
 
       &-options {
