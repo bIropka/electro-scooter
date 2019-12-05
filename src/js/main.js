@@ -182,10 +182,6 @@ $(function () {
     }
   });
 
-  $('.to-top').on('click', function () {
-    $('html, body').animate({scrollTop: 0}, 600);
-  });
-
   $(document).on('click', function (event) {
     const target = $(event.target);
 

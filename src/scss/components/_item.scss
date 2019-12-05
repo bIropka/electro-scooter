@@ -107,13 +107,12 @@
 
     .slick-slide {
       display: flex!important;
+      align-items: center;
       font-size: 14px;
       line-height: 25px;
       overflow: hidden;
 
       img {
-        display: inline-block;
-        vertical-align: middle;
         width: 20px;
         margin: 0 5px;
         flex-shrink: 0;
