@@ -50,9 +50,15 @@
           span:first-of-type {
             width: 30px;
             height: 30px;
-            margin: 0 10px 0 0;
             border-radius: 50%;
+            margin: 0 10px 0 0;
+            overflow: hidden;
             flex-shrink: 0;
+
+            img {
+              height: 100%;
+            }
+
           }
 
           &.active {
@@ -68,8 +74,10 @@
                 color: $color-white;
                 text-align: center;
                 position: absolute;
+                top: 0;
                 left: 0;
                 right: 0;
+                z-index: 1;
               }
 
             }
@@ -898,31 +906,35 @@
 
             &:hover {
 
-              .color-red {
+              span:first-of-type {
+                box-shadow: 0 0 0 5px #fff, 0 0 0 6px grey;
+              }
+
+              span:first-of-type.color-red {
                 box-shadow: 0 0 0 5px $color-white, 0 0 0 6px #e52965;
               }
 
-              .color-violet {
+              span:first-of-type.color-violet {
                 box-shadow: 0 0 0 5px $color-white, 0 0 0 6px #6c2d71;
               }
 
-              .color-brown {
+              span:first-of-type.color-brown {
                 box-shadow: 0 0 0 5px $color-white, 0 0 0 6px #9b5f09;
               }
 
-              .color-blue {
+              span:first-of-type.color-blue {
                 box-shadow: 0 0 0 5px $color-white, 0 0 0 6px #3dadbe;
               }
 
-              .color-rose {
+              span:first-of-type.color-rose {
                 box-shadow: 0 0 0 5px $color-white, 0 0 0 6px #c44078;
               }
 
-              .color-grey {
+              span:first-of-type.color-grey {
                 box-shadow: 0 0 0 5px $color-white, 0 0 0 6px #c7c0ca;
               }
 
-              .color-yellow {
+              span:first-of-type.color-yellow {
                 box-shadow: 0 0 0 5px $color-white, 0 0 0 6px #deb22d;
               }
 
