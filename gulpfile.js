@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     pug = require('gulp-pug'),
     browsersync = require('browser-sync'),
     concat = require('gulp-concat'),
