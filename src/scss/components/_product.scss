@@ -14,11 +14,36 @@
       margin: 0 0 20px 25px;
     }
 
+    .section-header {
+      margin: 0 0 40px;
+
+      h2 {
+
+        a {
+          color: $color-brown;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+            color: $color-brown;
+          }
+
+        }
+
+      }
+
+    }
+
   }
 
   &-list {
     width: 320px;
     margin: 0 auto;
+
+    &.slider-arrows .slick-arrow {
+      top: -35px;
+    }
+
   }
 
   &-card {
@@ -219,6 +244,10 @@
       width: 610px;
       position: static;
       margin: 0 0 0 -15px;
+
+      &.slider-arrows .slick-arrow {
+        top: 13px;
+      }
 
       .slick-list {
         overflow: visible;
