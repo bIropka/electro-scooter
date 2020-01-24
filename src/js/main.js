@@ -209,9 +209,7 @@ $(function () {
   btnCatalog.on('click', function () {
     $(this).toggleClass('active');
     $('.header-catalog').fadeToggle(300);
-    $('.header-catalog-menu-item.active .header-catalog-submenu .first-item').detach();
-    $('.header-catalog-menu-item.active .header-catalog-submenu').fadeOut(300);
-    $('.header-catalog-menu-item.active').removeClass('active');
+    btnCatalogClicked($(this));
   });
 
   btnCategory.on('click', function () {
@@ -226,10 +224,7 @@ $(function () {
 
   $('.header-catalog-menu-handle').on('click', function () {
     if ($(window).width() < 1200) {
-      $(this).parents('.header-catalog-menu-item').addClass('active');
-      $('<li class="header-catalog-submenu-item first-item"><i class="fa fa-angle-left"></i>Вернуться назад</li>')
-        .prependTo($(this).siblings('.header-catalog-submenu'));
-      $(this).siblings('.header-catalog-submenu').fadeIn(300);
+      catalogMenuHandleClicked($(this));
     }
   });
 
@@ -250,6 +245,44 @@ $(function () {
     }
   });
 
+  $('.header-catalog-menu-item').hover(
+    function () {
+      if ( $(window).width() > 1199 ) {
+        $(this).addClass('hovered');
+        const submenu = $(this).find('.header-catalog-submenu');
+        if ( submenu.length &&!$('.header-catalog > .header-catalog-submenu.desktop-active').length  ) {
+          submenu.appendTo($('.header-catalog'));
+          $(this).addClass('with-submenu');
+          submenu.addClass('desktop-active');
+          submenu.css('top', $(this).position().top + 'px');
+          console.log($(this).position().top, submenu.css('top'));
+        }
+      }
+    },
+    function () {
+      if ( $(window).width() > 1199 ) {
+        if ( $(this).hasClass('with-submenu')) {
+          const submenu = $('.header-catalog > .header-catalog-submenu.desktop-active');
+          if ( !submenu.is(':hover') ) {
+            menuItemUnhovered($(this));
+          }
+        } else {
+          $(this).removeClass('hovered');
+        }
+      }
+    }
+  );
+
+  $('.header-catalog-submenu').hover(
+    function () {},
+    function () {
+      const parentMenuItem = $('.header-catalog-menu-item.hovered.with-submenu');
+      if ( !parentMenuItem.is(':hover') ) {
+        menuItemUnhovered(parentMenuItem);
+      }
+    }
+  );
+
   categories.on('click', '.categories-submenu li.first-item', function () {
     if ($(window).width() < 1200) {
       $(this).parents('.categories-submenu li').removeClass('active');
@@ -257,6 +290,28 @@ $(function () {
       $(this).detach();
     }
   });
+
+  function btnCatalogClicked (btn) {
+    $('.header-catalog-menu-item.active .header-catalog-submenu .first-item').detach();
+    $('.header-catalog-menu-item.active .header-catalog-submenu').fadeOut(300);
+    $('.header-catalog-menu-item.active').removeClass('active');
+  }
+
+  function catalogMenuHandleClicked (handle) {
+    $(handle).parents('.header-catalog-menu-item').addClass('active');
+    $('<li class="header-catalog-submenu-item first-item"><i class="fa fa-angle-left"></i>Вернуться назад</li>')
+      .prependTo($(handle).siblings('.header-catalog-submenu'));
+    $(handle).siblings('.header-catalog-submenu').fadeIn(300);
+  }
+
+  function menuItemUnhovered (menuItem) {
+    const submenu = $('.header-catalog > .header-catalog-submenu.desktop-active');
+    $(menuItem).removeClass('hovered');
+    $(menuItem).removeClass('with-submenu');
+    submenu.removeClass('desktop-active');
+    submenu.appendTo($(menuItem));
+    submenu.css('top', 'auto');
+  }
 
   function pageRepaint() {
     if ($(window).width() < 768) {
@@ -292,6 +347,7 @@ $(function () {
     headerContacts.appendTo(headerBottom);
     headerAddress.appendTo(headerBottom);
     categories.appendTo($('.wrapper-sidebar '));
+    btnCatalogClicked(btnCatalog);
   }
 
   function renderMobileFooter() {

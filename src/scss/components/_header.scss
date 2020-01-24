@@ -176,8 +176,11 @@
       overflow: auto;
       position: fixed;
       left: 0;
-      top: 64px;
       z-index: 102;
+
+      @media (max-width: 1199px) {
+        top: 64px!important;
+      }
 
       &-item {
         padding: 18px 15px;
@@ -458,19 +461,15 @@
         z-index: 1;
       }
 
-      ul li:after {
-        width: auto;
-        left: 20px;
-        right: 20px;
-      }
-
       &-menu {
+        max-height: 475px;
+        overflow: auto;
 
         &-item {
           padding: 10px 20px;
           position: relative;
 
-          &:hover {
+          &.hovered {
             background: $color-blue;
 
             a,
@@ -486,49 +485,64 @@
               display: none;
             }
 
-            .header-catalog-submenu {
-              display: block;
-              width: 250px;
-              height: auto;
-              padding: 0;
-              border: none;
-              position: absolute;
-              top: 0;
-              left: 100%;
+          }
 
-              &-item {
-                padding: 0;
-                background: $color-blue;
-                border-bottom: 1px solid $color-white;
+          &:after {
+            width: auto;
+            left: 20px;
+            right: 20px;
+          }
 
-                &:first-of-type {
-                  border-left: 1px solid $color-white;
-                }
+        }
 
-                a {
-                  display: block;
-                  padding: 18px 15px;
-                  font-size: 14px;
-                  line-height: 19px;
+      }
 
-                  &:hover {
-                    text-decoration: none;
-                  }
+      &-submenu {
+        display: none;
+        width: 250px;
+        height: auto;
+        padding: 0;
+        border: none;
 
-                }
+        &.desktop-active {
+          display: block!important;
+          position: absolute;
+          left: 100%;
 
-                &:after {
-                  display: none;
-                }
+          a {
+            color: $color-white;
+            text-decoration: none;
+          }
 
-                &:hover {
-                  background: $color-green;
-                }
+        }
 
-              }
+        &-item {
+          padding: 0;
+          background: $color-blue;
+          border-bottom: 1px solid $color-white;
 
+          &:first-of-type {
+            border-left: 1px solid $color-white;
+          }
+
+          a {
+            display: block;
+            padding: 18px 15px;
+            font-size: 14px;
+            line-height: 19px;
+
+            &:hover {
+              text-decoration: none;
             }
 
+          }
+
+          &:after {
+            display: none!important;
+          }
+
+          &:hover {
+            background: $color-green;
           }
 
         }
