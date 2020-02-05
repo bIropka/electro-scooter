@@ -259,6 +259,10 @@
 
     }
 
+    img {
+      max-height: 100%;
+    }
+
   }
 
   &-form {
@@ -961,6 +965,11 @@
         padding: 30px 60px;
       }
 
+    }
+
+    &-image {
+      width: 650px;
+      margin: 0;
     }
 
     &-form {
