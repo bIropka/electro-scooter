@@ -291,6 +291,25 @@ $(function () {
     }
   });
 
+  $('.field-file input').on('change', function () {
+    const value = $(this).val().split('\\');
+    $(this).siblings('.field-file-text').text(value[value.length - 1]);
+  });
+
+  $('.field-rate input').on('change', function () {
+    if ($(this).is(':checked')) {
+      const value = parseInt($(this).val());
+      $(this).parent().find('input[type=radio]').each(function (index, item) {
+        const star = $(item).next('label').find('i');
+        if (index < value) {
+          star.removeClass('fa-star-o').addClass('fa-star');
+        } else {
+          star.removeClass('fa-star').addClass('fa-star-o');
+        }
+      });
+    }
+  });
+
   function btnCatalogClicked (btn) {
     $('.header-catalog-menu-item.active .header-catalog-submenu .first-item').detach();
     $('.header-catalog-menu-item.active .header-catalog-submenu').fadeOut(300);

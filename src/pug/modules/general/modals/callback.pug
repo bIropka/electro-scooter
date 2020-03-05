@@ -1,0 +1,29 @@
+.modal(data-modal="callback")
+    .modal-inner.modal-form
+        .modal-header
+            h3 Обратный звонок
+            span * поля, обязательные для заполнения
+            .modal-close
+        form.modal-body
+            .form-row
+                fieldset
+                    label.field-label(for="callback-name") Ваше имя *
+                    input#callback-name.field-input(type="text" placeholder="Степан")
+                fieldset
+                    label.field-label(for="callback-city") Ваш город *
+                    input#callback-city.field-input(type="text" placeholder="Москва")
+            .form-row
+                fieldset
+                    label.field-label(for="callback-phone") Ваш телефон *
+                    input#callback-phone.field-input(type="tel" placeholder="+7 (927) 587-58-57")
+                fieldset
+                    label.field-label(for="callback-time") Время, удобное для звонка
+                    input#callback-time.field-input(type="text" placeholder="С 17:00 до 20:00")
+            fieldset
+                label.field-label(for="callback-message") Комментарий
+                textarea#callback-message.field-input(placeholder="Интересуют оптовые закупки в вашем магазине.")
+        .modal-footer
+            button.btn(type="submit")
+                span.btn-text Отправить отзыв
+            button.btn.btn-grey(type="reset")
+                span.btn-text Очистить форму

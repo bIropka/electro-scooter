@@ -78,7 +78,9 @@
     }
 
     &-city {
+      margin: 0 20px 0 0;
       color: #b7b8b8;
+      white-space: nowrap;
     }
 
     p {
@@ -119,7 +121,12 @@
 
     .filter-pags {
       width: calc(100% + 20px);
+      justify-content: center;
       margin: 0 -10px;
+    }
+
+    .btn[data-call-modal] {
+      margin: 0 auto 25px;
     }
 
   }
@@ -348,13 +355,22 @@
         position: static;
       }
 
+      &-city {
+        margin: 0;
+      }
+
     }
 
     .page-header {
+      display: block;
+
+      .chooser {
+        width: 100%;
+      }
 
       .filter-pags {
         width: auto;
-        margin: 0;
+        margin: 20px 0;
       }
 
     }
@@ -419,6 +435,33 @@
 
     &-list {
       margin: 0 0 20px;
+    }
+
+  }
+
+  @include more-992 {
+
+    .page-header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .chooser {
+        width: auto;
+        margin: 0 25px 0 0;
+      }
+
+      .filter-pags {
+        justify-content: flex-start;
+        margin: 0;
+        flex-grow: 1;
+      }
+
+      .btn[data-call-modal] {
+        width: auto;
+        margin: 0 0 0 20px;
+      }
+
     }
 
   }

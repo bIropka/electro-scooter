@@ -170,7 +170,7 @@
           <div class="wrapper-inner">
             <div class="header-bottom-column">
               <div class="header-logo"><span class="header-logo-icon"><img src="images/logo.png" alt="Electro Scooter"></span><span class="header-logo-text">Все самое лучшее только у нас</span></div>
-              <div class="btn"><span class="btn-icon"><img src="images/icons/white-callback.svg" alt="callback"></span><span class="btn-text">Обратный звонок</span></div>
+              <div class="btn" data-call-modal="callback"><span class="btn-icon"><img src="images/icons/white-callback.svg" alt="callback"></span><span class="btn-text">Обратный звонок</span></div>
             </div>
           </div>
         </div>
@@ -648,6 +648,103 @@
           </div>
         </div>
       </footer>
+    </div>
+    <div class="modal" data-modal="callback">
+      <div class="modal-inner modal-form">
+        <div class="modal-header">
+          <h3>Обратный звонок</h3><span>* поля, обязательные для заполнения</span>
+          <div class="modal-close"></div>
+        </div>
+        <form class="modal-body">
+          <div class="form-row">
+            <fieldset>
+              <label class="field-label" for="callback-name">Ваше имя *</label>
+              <input class="field-input" id="callback-name" type="text" placeholder="Степан">
+            </fieldset>
+            <fieldset>
+              <label class="field-label" for="callback-city">Ваш город *</label>
+              <input class="field-input" id="callback-city" type="text" placeholder="Москва">
+            </fieldset>
+          </div>
+          <div class="form-row">
+            <fieldset>
+              <label class="field-label" for="callback-phone">Ваш телефон *</label>
+              <input class="field-input" id="callback-phone" type="tel" placeholder="+7 (927) 587-58-57">
+            </fieldset>
+            <fieldset>
+              <label class="field-label" for="callback-time">Время, удобное для звонка</label>
+              <input class="field-input" id="callback-time" type="text" placeholder="С 17:00 до 20:00">
+            </fieldset>
+          </div>
+          <fieldset>
+            <label class="field-label" for="callback-message">Комментарий</label>
+            <textarea class="field-input" id="callback-message" placeholder="Интересуют оптовые закупки в вашем магазине."></textarea>
+          </fieldset>
+        </form>
+        <div class="modal-footer">
+          <button class="btn" type="submit"><span class="btn-text">Отправить отзыв</span></button>
+          <button class="btn btn-grey" type="reset"><span class="btn-text">Очистить форму</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" data-modal="add-comment">
+      <div class="modal-inner modal-form">
+        <div class="modal-header">
+          <h3>Новый отзыв</h3><span>* поля, обязательные для заполнения</span>
+          <div class="modal-close"></div>
+        </div>
+        <form class="modal-body">
+          <div class="form-row">
+            <fieldset>
+              <label class="field-label" for="comment-name">Ваше имя *</label>
+              <input class="field-input" id="comment-name" type="text" placeholder="Степан">
+            </fieldset>
+            <fieldset>
+              <label class="field-label" for="comment-city">Ваш город *</label>
+              <input class="field-input" id="comment-city" type="text" placeholder="Москва">
+            </fieldset>
+          </div>
+          <div class="form-row">
+            <fieldset>
+              <div class="field-label">Ваша фотография</div>
+              <label class="field-file">
+                <input type="file"><span class="field-file-text">Выберите файл</span><span class="field-file-label">Обзор</span>
+              </label>
+            </fieldset>
+            <fieldset>
+              <div class="field-label">Ваша оценка *</div>
+              <div class="field-rate">
+                <input type="radio" name="comment-rate" id="comment-rate-1" value="1">
+                <label for="comment-rate-1"><i class="fa fa-star-o"></i></label>
+                <input type="radio" name="comment-rate" id="comment-rate-2" value="2">
+                <label for="comment-rate-2"><i class="fa fa-star-o"></i></label>
+                <input type="radio" name="comment-rate" id="comment-rate-3" value="3">
+                <label for="comment-rate-3"><i class="fa fa-star-o"></i></label>
+                <input type="radio" name="comment-rate" id="comment-rate-4" value="4">
+                <label for="comment-rate-4"><i class="fa fa-star-o"></i></label>
+                <input type="radio" name="comment-rate" id="comment-rate-5" value="5">
+                <label for="comment-rate-5"><i class="fa fa-star-o"></i></label>
+              </div>
+            </fieldset>
+          </div>
+          <fieldset>
+            <label class="field-label" for="comment-review">Ваш отзыв *</label>
+            <textarea class="field-input" id="comment-review"></textarea>
+          </fieldset>
+          <fieldset>
+            <label class="field-label" for="comment-like">Что понравилось *</label>
+            <textarea class="field-input" id="comment-like"></textarea>
+          </fieldset>
+          <fieldset>
+            <label class="field-label" for="comment-dislike">Что <span>не</span> понравилось *</label>
+            <textarea class="field-input" id="comment-dislike"></textarea>
+          </fieldset>
+        </form>
+        <div class="modal-footer">
+          <button class="btn" type="submit"><span class="btn-text">Отправить отзыв</span></button>
+          <button class="btn btn-grey" type="reset"><span class="btn-text">Очистить форму</span></button>
+        </div>
+      </div>
     </div>
     <script src="js/libs.js"></script>
     <script src="js/scripts.js"></script>

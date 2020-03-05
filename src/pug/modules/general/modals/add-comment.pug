@@ -1,0 +1,53 @@
+.modal(data-modal="add-comment")
+    .modal-inner.modal-form
+        .modal-header
+            h3 Новый отзыв
+            span * поля, обязательные для заполнения
+            .modal-close
+        form.modal-body
+            .form-row
+                fieldset
+                    label.field-label(for="comment-name") Ваше имя *
+                    input#comment-name.field-input(type="text" placeholder="Степан")
+                fieldset
+                    label.field-label(for="comment-city") Ваш город *
+                    input#comment-city.field-input(type="text" placeholder="Москва")
+            .form-row
+                fieldset
+                    .field-label Ваша фотография
+                    label.field-file
+                        input(type="file")
+                        span.field-file-text Выберите файл
+                        span.field-file-label Обзор
+                fieldset
+                    .field-label Ваша оценка *
+                    .field-rate
+                        input(type="radio" name="comment-rate" id="comment-rate-1" value="1")
+                        label(for="comment-rate-1")
+                            i.fa.fa-star-o
+                        input(type="radio" name="comment-rate" id="comment-rate-2" value="2")
+                        label(for="comment-rate-2")
+                            i.fa.fa-star-o
+                        input(type="radio" name="comment-rate" id="comment-rate-3" value="3")
+                        label(for="comment-rate-3")
+                            i.fa.fa-star-o
+                        input(type="radio" name="comment-rate" id="comment-rate-4" value="4")
+                        label(for="comment-rate-4")
+                            i.fa.fa-star-o
+                        input(type="radio" name="comment-rate" id="comment-rate-5" value="5")
+                        label(for="comment-rate-5")
+                            i.fa.fa-star-o
+            fieldset
+                label.field-label(for="comment-review") Ваш отзыв *
+                textarea#comment-review.field-input
+            fieldset
+                label.field-label(for="comment-like") Что понравилось *
+                textarea#comment-like.field-input
+            fieldset
+                label.field-label(for="comment-dislike") Что <span>не</span> понравилось *
+                textarea#comment-dislike.field-input
+        .modal-footer
+            button.btn(type="submit")
+                span.btn-text Отправить отзыв
+            button.btn.btn-grey(type="reset")
+                span.btn-text Очистить форму
