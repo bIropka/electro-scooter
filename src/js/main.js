@@ -297,18 +297,39 @@ $(function () {
   });
 
   $('.field-rate input').on('change', function () {
-    if ($(this).is(':checked')) {
-      const value = parseInt($(this).val());
-      $(this).parent().find('input[type=radio]').each(function (index, item) {
-        const star = $(item).next('label').find('i');
-        if (index < value) {
-          star.removeClass('fa-star-o').addClass('fa-star');
-        } else {
-          star.removeClass('fa-star').addClass('fa-star-o');
-        }
-      });
+    if ( $(this).is(':checked') ) {
+      fieldRateRender($(this));
     }
   });
+
+  $('.field-rate label').hover(
+    function () {
+      fieldRateRender($(this).prev('input'));
+    },
+    function () {
+      const checked = $(this).siblings('input:checked');
+      if ( checked.length ) {
+        fieldRateRender(checked);
+      } else {
+        fieldRateRender($('.field-rate'));
+      }
+    });
+
+  function fieldRateRender ( input ) {
+    let field = $(input);
+    const value = ( field.hasClass('field-rate') ) ? 0 : parseInt($(input).val());
+    if ( value === 0) {
+      field = field.find('input').first();
+    }
+    field.parent().find('input[type=radio]').each(function (index, item) {
+      const star = $(item).next('label').find('i');
+      if (index < value) {
+        star.removeClass('fa-star-o').addClass('fa-star');
+      } else {
+        star.removeClass('fa-star').addClass('fa-star-o');
+      }
+    });
+  }
 
   function btnCatalogClicked (btn) {
     $('.header-catalog-menu-item.active .header-catalog-submenu .first-item').detach();
