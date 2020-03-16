@@ -6,18 +6,14 @@ $(function () {
   const catalogBanner = $('.catalog-banner');
   const breadcrumbs = $('.breadcrumbs');
   const catalogAside = $('.catalog-aside');
-  const filterCost = document.getElementById('filter-cost');
-  const filterCostHandles =[
-    document.getElementById('filter-cost-from'),
-    document.getElementById('filter-cost-to')
-  ];
+  const filterCost = $('.catalog-filter-cost');
 
   catalogRepaint();
 
   setChooserColors();
 
-  if (filterCost) {
-    noUiSlider.create(filterCost, {
+  filterCost.each(function (index, item) {
+    noUiSlider.create(item, {
       start: [1000, 5000],
       step: 100,
       margin: 1000,
@@ -27,15 +23,19 @@ $(function () {
         'max': 8000
       }
     });
+    const filterCostHandles =[
+      $(item).parent().find('input.filter-cost-from').get(0),
+      $(item).parent().find('input.filter-cost-to').get(0)
+    ];
     filterCostHandles.forEach(function (element, index) {
       element.addEventListener('change', function () {
-        filterCost.noUiSlider.setHandle(index, filterCostHandles[index].value);
+        item.noUiSlider.setHandle(index, filterCostHandles[index].value);
       });
     });
-    filterCost.noUiSlider.on('update', function (values, handle) {
+    item.noUiSlider.on('update', function (values, handle) {
       filterCostHandles[handle].value = Math.trunc(values[handle]);
     });
-  }
+  });
 
   $(window).on('resize', function () {
     catalogRepaint();
