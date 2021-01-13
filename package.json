@@ -26,7 +26,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "jquery": "^3.3.1",
-    "jquery-validation": "^1.19.0",
+    "jquery-validation": "^1.19.3",
     "jquery.maskedinput": "^1.4.1",
     "js-cookie": "^2.2.0",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
